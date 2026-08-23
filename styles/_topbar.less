@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// Utility bar above the masthead
+// -----------------------------------------------------------------------------
+
+.ils-topbar {
+	background: var(--ils-topbar-bg);
+	color: var(--ils-topbar-text);
+	font-size: 0.82rem;
+}
+
+.ils-topbar__inner {
+	.ils-container();
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.35rem 1.25rem;
+	min-height: 2.4rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+
+.ils-topbar__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin: 0;
+	}
+}
+
+@media (max-width: 599px) {
+	.ils-topbar__inner {
+		justify-content: center;
+	}
+
+	.ils-topbar__meta {
+		justify-content: center;
+	}
+}

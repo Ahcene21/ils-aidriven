@@ -241,3 +241,79 @@
 		padding: 1.25rem;
 	}
 }
+
+// --- Journal information -----------------------------------------------------
+
+.ils-journal-info__list {
+	margin: 0;
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+	overflow: hidden;
+}
+
+.ils-journal-info__row {
+	display: grid;
+	gap: 0.15rem 1rem;
+	padding: 0.7rem 1rem;
+	background: var(--ils-surface);
+
+	+ .ils-journal-info__row {
+		border-top: 1px solid var(--ils-border);
+	}
+
+	&:nth-child(even) {
+		background: var(--ils-surface-alt);
+	}
+
+	dt {
+		font-size: 0.82rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+	}
+
+	dd {
+		margin: 0;
+		color: var(--ils-text);
+		word-break: break-word;
+	}
+}
+
+@media (min-width: 560px) {
+	.ils-journal-info__row {
+		grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+		align-items: baseline;
+	}
+}
+
+// --- Cover thumbnails on the latest-articles cards ---------------------------
+
+.ils-latest-card__cover {
+	margin: -1.25rem -1.25rem 0.35rem;
+
+	img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		background: var(--ils-surface-sunken);
+	}
+}
+
+// --- Archive grouped by year -------------------------------------------------
+
+.ils-archive-year {
+	margin-bottom: 3rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&__heading {
+		font-size: 1.25rem;
+		padding-bottom: 0.6rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 2px solid var(--ils-border);
+	}
+}

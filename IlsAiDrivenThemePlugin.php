@@ -33,8 +33,11 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
     {
         $this->registerOptions();
 
-        // Navigation menu areas offered to the journal manager.
-        $this->addMenuArea(['primary', 'user']);
+        // Navigation menu areas offered to the journal manager. "sidebar"
+        // is this theme's own area and feeds the left rail of the three-column
+        // layout, so editors build it in Website Settings > Navigation like any
+        // other menu instead of hand-editing a template.
+        $this->addMenuArea(['primary', 'user', 'sidebar']);
 
         $this->addStyle('stylesheet', 'styles/index.less');
         $this->modifyStyle('stylesheet', ['addLessVariables' => $this->getLessVariables()]);
@@ -49,7 +52,24 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
 
         $this->addScript('main', 'js/main.js', ['contexts' => 'frontend']);
 
+        // Metrics providers are third-party scripts, so they load only when a
+        // journal has explicitly opted in to one.
+        $badgeScripts = [
+            'dimensions' => 'https://badge.dimensions.ai/badge.js',
+            'altmetric' => 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js',
+            'plumx' => 'https://cdn.plu.mx/widget-popup.js',
+        ];
+        $badge = (string) $this->getOption('citationBadge');
+        if (isset($badgeScripts[$badge])) {
+            $this->addScript('citationBadge', $badgeScripts[$badge], [
+                'baseUrl' => '',
+                'contexts' => 'frontend',
+            ]);
+        }
+
         Hook::add('TemplateManager::display', [$this, 'loadTemplateData']);
+        Hook::add('Templates::Article::Main', [$this, 'addArticleShareTools']);
+        Hook::add('Templates::Article::Details', [$this, 'addArticleBadge']);
     }
 
     public function getDisplayName(): string
@@ -67,6 +87,85 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
      */
     protected function registerOptions(): void
     {
+        $this->addOption('sidebarLayout', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.description'),
+            'options' => [
+                ['value' => 'both', 'label' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.both')],
+                ['value' => 'right', 'label' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.right')],
+                ['value' => 'left', 'label' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.left')],
+                ['value' => 'none', 'label' => __('plugins.themes.ilsAiDriven.option.sidebarLayout.none')],
+            ],
+            'default' => 'both',
+        ]);
+
+        $this->addOption('showTopBar', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.showTopBar.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.showTopBar.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.showTopBar.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('showJournalInfo', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.showJournalInfo.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.showJournalInfo.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.showJournalInfo.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('showCoverImages', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.showCoverImages.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.showCoverImages.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.showCoverImages.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('showAbstractInList', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.showAbstractInList.label'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.showAbstractInList.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('showShareButtons', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.showShareButtons.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.showShareButtons.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.showShareButtons.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('focusMode', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.focusMode.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.focusMode.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.focusMode.enable')],
+            ],
+            'default' => true,
+        ]);
+
+        $this->addOption('citationBadge', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ilsAiDriven.option.citationBadge.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.citationBadge.description'),
+            'options' => [
+                ['value' => 'none', 'label' => __('plugins.themes.ilsAiDriven.option.citationBadge.none')],
+                ['value' => 'dimensions', 'label' => __('plugins.themes.ilsAiDriven.option.citationBadge.dimensions')],
+                ['value' => 'altmetric', 'label' => __('plugins.themes.ilsAiDriven.option.citationBadge.altmetric')],
+                ['value' => 'plumx', 'label' => __('plugins.themes.ilsAiDriven.option.citationBadge.plumx')],
+            ],
+            'default' => 'none',
+        ]);
+
         $this->addOption('primaryColour', 'FieldColor', [
             'label' => __('plugins.themes.ilsAiDriven.option.primaryColour.label'),
             'description' => __('plugins.themes.ilsAiDriven.option.primaryColour.description'),
@@ -317,8 +416,19 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
                 'showReadingProgress' => (bool) $this->getOption('showReadingProgress'),
                 'showArticleOutline' => (bool) $this->getOption('showArticleOutline'),
                 'announcementBar' => trim((string) $this->getOption('announcementBar')),
+                'sidebarLayout' => $this->getOption('sidebarLayout') ?: 'both',
+                'showTopBar' => (bool) $this->getOption('showTopBar'),
+                'showJournalInfo' => (bool) $this->getOption('showJournalInfo'),
+                'showCoverImages' => (bool) $this->getOption('showCoverImages'),
+                'showAbstractInList' => (bool) $this->getOption('showAbstractInList'),
+                'citationBadge' => $this->getOption('citationBadge') ?: 'none',
+                'focusMode' => (bool) $this->getOption('focusMode'),
             ],
         ]);
+
+        if ($this->getOption('showJournalInfo')) {
+            $templateMgr->assign('ilsJournalInfo', $this->getJournalInfoRows());
+        }
 
         // Applied before first paint so a dark reader never sees a white flash.
         $templateMgr->addHeader(
@@ -457,6 +567,170 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
     }
 
     /**
+     * Build the "Journal Information" rows shown on the homepage.
+     *
+     * Everything comes from journal settings the editor already fills in, so
+     * the block stays correct without a second place to maintain.
+     *
+     * @return array<int, array{label: string, value: string}>
+     */
+    protected function getJournalInfoRows(): array
+    {
+        $context = Application::get()->getRequest()->getContext();
+        if (!$context) {
+            return [];
+        }
+
+        $candidates = [
+            'plugins.themes.ilsAiDriven.info.title' => $context->getLocalizedName(),
+            'plugins.themes.ilsAiDriven.info.initials' => $context->getLocalizedData('acronym'),
+            'plugins.themes.ilsAiDriven.info.abbreviation' => $context->getLocalizedData('abbreviation'),
+            'plugins.themes.ilsAiDriven.info.issnOnline' => $context->getData('onlineIssn'),
+            'plugins.themes.ilsAiDriven.info.issnPrint' => $context->getData('printIssn'),
+            'plugins.themes.ilsAiDriven.info.doiPrefix' => $context->getData('doiPrefix'),
+            'plugins.themes.ilsAiDriven.info.publisher' => $context->getData('publisherInstitution'),
+            'plugins.themes.ilsAiDriven.info.contact' => $context->getData('contactName'),
+        ];
+
+        $rows = [];
+        foreach ($candidates as $labelKey => $value) {
+            $value = is_array($value) ? reset($value) : $value;
+            $value = trim(strip_tags((string) $value));
+            if ($value !== '') {
+                $rows[] = ['label' => __($labelKey), 'value' => $value];
+            }
+        }
+
+        return $rows;
+    }
+
+    /**
+     * Append the social sharing row to the article page.
+     *
+     * Rendered as plain links rather than vendor widgets: no third-party
+     * JavaScript runs, and nothing is loaded until the reader clicks.
+     *
+     * @param string $hookName
+     * @param array $args [array $params, TemplateManager $smarty, string &$output]
+     */
+    public function addArticleShareTools(string $hookName, array $args): bool
+    {
+        if (!$this->getOption('showShareButtons')) {
+            return false;
+        }
+
+        $output = &$args[2];
+
+        try {
+            $smarty = $args[1];
+            $publication = $smarty->getTemplateVars('publication');
+            if (!$publication) {
+                return false;
+            }
+
+            $request = Application::get()->getRequest();
+            $url = $request->getRequestUrl();
+            $title = trim(strip_tags((string) $publication->getLocalizedTitle()));
+
+            $encodedUrl = rawurlencode($url);
+            $encodedTitle = rawurlencode($title);
+
+            $networks = [
+                'facebook' => ['Facebook', "https://www.facebook.com/sharer/sharer.php?u={$encodedUrl}"],
+                'x' => ['X', "https://twitter.com/intent/tweet?url={$encodedUrl}&text={$encodedTitle}"],
+                'linkedin' => ['LinkedIn', "https://www.linkedin.com/sharing/share-offsite/?url={$encodedUrl}"],
+                'whatsapp' => ['WhatsApp', "https://api.whatsapp.com/send?text={$encodedTitle}%20{$encodedUrl}"],
+                'telegram' => ['Telegram', "https://t.me/share/url?url={$encodedUrl}&text={$encodedTitle}"],
+                'reddit' => ['Reddit', "https://www.reddit.com/submit?url={$encodedUrl}&title={$encodedTitle}"],
+                'mendeley' => ['Mendeley', "https://www.mendeley.com/import/?url={$encodedUrl}"],
+                'email' => ['Email', "mailto:?subject={$encodedTitle}&body={$encodedUrl}"],
+            ];
+
+            $items = '';
+            foreach ($networks as $key => [$label, $href]) {
+                $items .= sprintf(
+                    '<li><a class="ils-share__link ils-share__link--%s" href="%s" target="_blank" rel="noopener noreferrer">'
+                        . '<span class="ils-share__label">%s</span></a></li>',
+                    htmlspecialchars($key, ENT_QUOTES),
+                    htmlspecialchars($href, ENT_QUOTES),
+                    htmlspecialchars($label, ENT_QUOTES)
+                );
+            }
+
+            $items .= sprintf(
+                '<li><button type="button" class="ils-share__link ils-share__link--copy ils-copy-button" '
+                    . 'data-ils-copy="%s" data-copied-label="%s"><span class="ils-share__label">%s</span></button></li>',
+                htmlspecialchars($url, ENT_QUOTES),
+                htmlspecialchars(__('plugins.themes.ilsAiDriven.copied'), ENT_QUOTES),
+                htmlspecialchars(__('plugins.themes.ilsAiDriven.copyLink'), ENT_QUOTES)
+            );
+
+            $output .= '<section class="item ils-share"><h2 class="label">'
+                . htmlspecialchars(__('plugins.themes.ilsAiDriven.share'), ENT_QUOTES)
+                . '</h2><ul class="ils-share__list">' . $items . '</ul></section>';
+        } catch (\Throwable $e) {
+            error_log('ilsAiDriven theme: unable to build share tools - ' . $e->getMessage());
+        }
+
+        return false;
+    }
+
+    /**
+     * Append the configured metrics badge to the article metadata column.
+     *
+     * @param string $hookName
+     * @param array $args [array $params, TemplateManager $smarty, string &$output]
+     */
+    public function addArticleBadge(string $hookName, array $args): bool
+    {
+        $badge = (string) $this->getOption('citationBadge');
+        if ($badge === '' || $badge === 'none') {
+            return false;
+        }
+
+        $output = &$args[2];
+
+        try {
+            $publication = $args[1]->getTemplateVars('publication');
+            $doi = $publication ? $this->getPublicationDoi($publication) : null;
+            if (!$doi) {
+                return false;
+            }
+
+            $markup = $this->getCitationBadgeHtml($badge, $doi);
+            if ($markup !== '') {
+                $output .= '<div class="item ils-metrics"><h2 class="label">'
+                    . htmlspecialchars(__('plugins.themes.ilsAiDriven.metrics'), ENT_QUOTES)
+                    . '</h2><div class="value">' . $markup . '</div></div>';
+            }
+        } catch (\Throwable $e) {
+            error_log('ilsAiDriven theme: unable to build citation badge - ' . $e->getMessage());
+        }
+
+        return false;
+    }
+
+    /**
+     * Markup each metrics provider expects. The provider's script, registered
+     * in init(), turns these placeholders into the rendered badge.
+     */
+    protected function getCitationBadgeHtml(string $provider, string $doi): string
+    {
+        $doi = htmlspecialchars($doi, ENT_QUOTES);
+
+        switch ($provider) {
+            case 'dimensions':
+                return '<span class="__dimensions_badge_embed__" data-doi="' . $doi . '" data-style="small_rectangle"></span>';
+            case 'altmetric':
+                return '<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="' . $doi . '"></div>';
+            case 'plumx':
+                return '<a class="plumx-plum-print-popup" href="https://plu.mx/plum/a/?doi=' . $doi . '" data-popup="right" data-size="medium"></a>';
+        }
+
+        return '';
+    }
+
+    /**
      * Read the DOI across the 3.3 (pub-id) and 3.4+ (DOI object) storage models.
      */
     protected function getPublicationDoi($publication): ?string
@@ -464,7 +738,16 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
         if (method_exists($publication, 'getDoi') && ($doi = $publication->getDoi())) {
             return $doi;
         }
-        if (method_exists($publication, 'getStoredPubId') && ($doi = $publication->getStoredPubId('doi'))) {
+
+        // 3.4+ keeps the DOI in a related object; getData() never fatals even
+        // if the accessor above is gone.
+        $doiObject = $publication->getData('doiObject');
+        if ($doiObject && ($doi = $doiObject->getData('doi'))) {
+            return $doi;
+        }
+
+        // 3.3 stored it as a pub-id setting.
+        if ($doi = $publication->getData('pub-id::doi')) {
             return $doi;
         }
 

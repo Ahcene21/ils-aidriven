@@ -4,14 +4,17 @@
  * Copyright (c) 2026 ILS AI-Driven
  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
- * @brief Site masthead and the opening half of the page scaffolding.
+ * @brief Top bar, masthead, primary navigation and the opening half of the
+ *  three-column page scaffolding.
  *
- * Everything opened here is closed in frontend/components/footer.tpl.
+ * Everything opened here is closed in frontend/components/footer.tpl. The left
+ * rail is driven by the theme's own "sidebar" navigation menu area, so editors
+ * fill it from Website Settings > Navigation.
  *
  * Only long-standing OJS template variables and helpers are used
- * ({load_menu}, {url}, $displayPageHeaderTitle, $displayPageHeaderLogo,
- * $publicFilesDir, $requestedPage, $currentLocale) so that the theme keeps
- * working across OJS releases.
+ * ({load_menu}, {url}, {translate}, $displayPageHeaderTitle,
+ * $displayPageHeaderLogo, $publicFilesDir, $requestedPage, $currentLocale) so
+ * that the theme keeps working across OJS releases.
  *}
 {strip}
 	{* Fall back to sensible defaults if the plugin hook did not run. *}
@@ -24,10 +27,15 @@
 			'showSearchInHeader' => true,
 			'showReadingProgress' => true,
 			'showArticleOutline' => true,
-			'announcementBar' => ''
+			'announcementBar' => '',
+			'sidebarLayout' => 'both',
+			'showTopBar' => true,
+			'focusMode' => true
 		]}
 	{/if}
 	{assign var="ilsIsArticle" value=($requestedPage == 'article')}
+	{assign var="ilsLayout" value=$ilsThemeOptions.sidebarLayout|default:"both"}
+	{assign var="ilsHasLeft" value=($ilsLayout == 'left' || $ilsLayout == 'both')}
 {/strip}<!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"|escape}" xml:lang="{$currentLocale|replace:"_":"-"|escape}">
 {include file="frontend/components/headerHead.tpl"}
@@ -35,6 +43,7 @@
 	class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"} ils-body"
 	dir="{$currentLocaleLangDir|escape|default:"ltr"}"
 	data-ils-outline="{if $ilsThemeOptions.showArticleOutline}true{else}false{/if}"
+	data-ils-focus-mode="{if $ilsThemeOptions.focusMode}true{else}false{/if}"
 >
 
 <div id="ils-i18n" hidden
@@ -45,6 +54,8 @@
 	data-copy-citation="{translate key="plugins.themes.ilsAiDriven.copyCitation"}"
 	data-copied="{translate key="plugins.themes.ilsAiDriven.copied"}"
 	data-back-to-top="{translate key="plugins.themes.ilsAiDriven.backToTop"}"
+	data-close="{translate key="common.close"}"
+	data-enlarge="{translate key="plugins.themes.ilsAiDriven.enlargeCover"}"
 ></div>
 
 <a href="#ils-main" class="ils-skip-link">{translate key="navigation.skip.main"}</a>
@@ -64,6 +75,24 @@
 	{/if}
 
 	<header class="ils-header ils-header--{$ilsThemeOptions.headerStyle|escape|default:"classic"}" data-sticky="{if $ilsThemeOptions.stickyHeader}true{else}false{/if}" role="banner">
+
+		{if $ilsThemeOptions.showTopBar}
+			<div class="ils-topbar">
+				<div class="ils-topbar__inner">
+					<ul class="ils-topbar__meta">
+						{if $currentContext && $currentContext->getData('onlineIssn')}
+							<li>{translate key="plugins.themes.ilsAiDriven.issnOnline" issn=$currentContext->getData('onlineIssn')|escape}</li>
+						{/if}
+						{if $currentContext && $currentContext->getData('printIssn')}
+							<li>{translate key="plugins.themes.ilsAiDriven.issnPrint" issn=$currentContext->getData('printIssn')|escape}</li>
+						{/if}
+					</ul>
+					<nav class="ils-user-nav" aria-label="{translate key="plugins.themes.ilsAiDriven.userMenu"}">
+						{load_menu name="user" id="navigationUser" ulClass="ils-user-nav__list"}
+					</nav>
+				</div>
+			</div>
+		{/if}
 
 		<div class="ils-header__masthead">
 			<div class="ils-header__masthead-inner">
@@ -114,9 +143,11 @@
 						</button>
 					{/if}
 
-					<nav class="ils-user-nav" aria-label="{translate key="plugins.themes.ilsAiDriven.userMenu"}">
-						{load_menu name="user" id="navigationUser" ulClass="ils-user-nav__list"}
-					</nav>
+					{if !$ilsThemeOptions.showTopBar}
+						<nav class="ils-user-nav ils-user-nav--masthead" aria-label="{translate key="plugins.themes.ilsAiDriven.userMenu"}">
+							{load_menu name="user" id="navigationUser" ulClass="ils-user-nav__list"}
+						</nav>
+					{/if}
 				</div>
 
 			</div>
@@ -137,5 +168,18 @@
 
 	</header>
 
-	<div class="pkp_structure_content ils-content">
+	<div class="pkp_structure_content ils-content ils-content--{$ilsLayout|escape}">
+
+		{if $ilsHasLeft}
+			{capture assign="ilsRail"}{load_menu name="sidebar" id="navigationSidebar" ulClass="ils-rail__list"}{/capture}
+			{if $ilsRail|regex_replace:"/\s+/":""}
+				<div class="ils-rail" role="complementary" aria-label="{translate key="plugins.themes.ilsAiDriven.journalMenu"}">
+					<nav class="pkp_block ils-rail__block">
+						<h2 class="title">{translate key="plugins.themes.ilsAiDriven.journalMenu"}</h2>
+						{$ilsRail}
+					</nav>
+				</div>
+			{/if}
+		{/if}
+
 		<main class="pkp_structure_main ils-main" id="ils-main" tabindex="-1" role="main">

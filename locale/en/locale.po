@@ -269,3 +269,155 @@ msgstr "ISSN (online): {$issn}"
 
 msgid "plugins.themes.ilsAiDriven.issnPrint"
 msgstr "ISSN (print): {$issn}"
+
+# --- Layout and content options ---------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.label"
+msgstr "Column layout"
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.description"
+msgstr ""
+"The left rail is filled from a navigation menu you assign to the theme's "
+"\"sidebar\" menu area under Website Settings → Navigation. The right column "
+"holds the usual OJS sidebar blocks. Either column disappears if you leave it "
+"empty."
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.both"
+msgstr "Three columns: menu rail, content, sidebar blocks"
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.right"
+msgstr "Two columns: content and sidebar blocks"
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.left"
+msgstr "Two columns: menu rail and content"
+
+msgid "plugins.themes.ilsAiDriven.option.sidebarLayout.none"
+msgstr "Single column"
+
+msgid "plugins.themes.ilsAiDriven.option.showTopBar.label"
+msgstr "Utility bar"
+
+msgid "plugins.themes.ilsAiDriven.option.showTopBar.description"
+msgstr "A slim strip above the masthead carrying the ISSNs and the user menu."
+
+msgid "plugins.themes.ilsAiDriven.option.showTopBar.enable"
+msgstr "Show the utility bar"
+
+msgid "plugins.themes.ilsAiDriven.option.showJournalInfo.label"
+msgstr "Journal information block"
+
+msgid "plugins.themes.ilsAiDriven.option.showJournalInfo.description"
+msgstr ""
+"A table of the journal's title, initials, ISSNs, DOI prefix, publisher and "
+"principal contact on the homepage. Rows with no value are left out."
+
+msgid "plugins.themes.ilsAiDriven.option.showJournalInfo.enable"
+msgstr "Show journal information on the homepage"
+
+msgid "plugins.themes.ilsAiDriven.option.showCoverImages.label"
+msgstr "Article cover images"
+
+msgid "plugins.themes.ilsAiDriven.option.showCoverImages.description"
+msgstr "Shows the cover image uploaded to a publication beside it in article lists."
+
+msgid "plugins.themes.ilsAiDriven.option.showCoverImages.enable"
+msgstr "Show cover images in article lists"
+
+msgid "plugins.themes.ilsAiDriven.option.showAbstractInList.label"
+msgstr "Abstract snippets"
+
+msgid "plugins.themes.ilsAiDriven.option.showAbstractInList.enable"
+msgstr "Show the first part of the abstract in article lists"
+
+msgid "plugins.themes.ilsAiDriven.option.showShareButtons.label"
+msgstr "Sharing"
+
+msgid "plugins.themes.ilsAiDriven.option.showShareButtons.description"
+msgstr ""
+"Adds share links for Facebook, X, LinkedIn, WhatsApp, Telegram, Reddit, "
+"Mendeley and email, plus a copy-link button, to article pages. These are "
+"plain links: nothing is requested from those services until a reader clicks."
+
+msgid "plugins.themes.ilsAiDriven.option.showShareButtons.enable"
+msgstr "Show share links on article pages"
+
+msgid "plugins.themes.ilsAiDriven.option.focusMode.label"
+msgstr "Focus mode"
+
+msgid "plugins.themes.ilsAiDriven.option.focusMode.description"
+msgstr ""
+"Clicking an article cover image enlarges it over a dimmed, blurred page so "
+"nothing else competes with it."
+
+msgid "plugins.themes.ilsAiDriven.option.focusMode.enable"
+msgstr "Enlarge cover images on click"
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.label"
+msgstr "Metrics badge"
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.description"
+msgstr ""
+"Shows a citation or attention badge on articles that have a DOI. This loads "
+"a script from the provider you choose, so leave it off unless you want that "
+"third-party request."
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.none"
+msgstr "None"
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.dimensions"
+msgstr "Dimensions"
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.altmetric"
+msgstr "Altmetric"
+
+msgid "plugins.themes.ilsAiDriven.option.citationBadge.plumx"
+msgstr "PlumX"
+
+# --- Journal information rows -----------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.journalInfo"
+msgstr "Journal information"
+
+msgid "plugins.themes.ilsAiDriven.info.title"
+msgstr "Journal title"
+
+msgid "plugins.themes.ilsAiDriven.info.initials"
+msgstr "Initials"
+
+msgid "plugins.themes.ilsAiDriven.info.abbreviation"
+msgstr "Abbreviation"
+
+msgid "plugins.themes.ilsAiDriven.info.issnOnline"
+msgstr "ISSN (online)"
+
+msgid "plugins.themes.ilsAiDriven.info.issnPrint"
+msgstr "ISSN (print)"
+
+msgid "plugins.themes.ilsAiDriven.info.doiPrefix"
+msgstr "DOI prefix"
+
+msgid "plugins.themes.ilsAiDriven.info.publisher"
+msgstr "Publisher"
+
+msgid "plugins.themes.ilsAiDriven.info.contact"
+msgstr "Principal contact"
+
+# --- Interface --------------------------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.journalMenu"
+msgstr "Journal menu"
+
+msgid "plugins.themes.ilsAiDriven.forAuthors"
+msgstr "For authors"
+
+msgid "plugins.themes.ilsAiDriven.share"
+msgstr "Share this article"
+
+msgid "plugins.themes.ilsAiDriven.copyLink"
+msgstr "Copy link"
+
+msgid "plugins.themes.ilsAiDriven.metrics"
+msgstr "Metrics"
+
+msgid "plugins.themes.ilsAiDriven.enlargeCover"
+msgstr "Enlarge cover image"

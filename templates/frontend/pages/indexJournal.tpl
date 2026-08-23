@@ -90,6 +90,22 @@
 		{/if}
 	{/if}
 
+	{if $ilsJournalInfo && $ilsJournalInfo|@count}
+		<section class="ils-section ils-journal-info" aria-labelledby="ils-journal-info-title">
+			<div class="ils-section__head">
+				<h2 class="ils-section__title" id="ils-journal-info-title">{translate key="plugins.themes.ilsAiDriven.journalInfo"}</h2>
+			</div>
+			<dl class="ils-journal-info__list">
+				{foreach from=$ilsJournalInfo item=ilsRow}
+					<div class="ils-journal-info__row">
+						<dt>{$ilsRow.label|escape}</dt>
+						<dd>{$ilsRow.value|escape}</dd>
+					</div>
+				{/foreach}
+			</dl>
+		</section>
+	{/if}
+
 	{if $announcements && $announcements|@count}
 		<section class="ils-section" aria-labelledby="ils-announcements-title">
 			<div class="ils-section__head">
@@ -116,6 +132,12 @@
 					{if $ilsPublication}
 						<li>
 							<article class="ils-latest-card">
+								{assign var="ilsCover" value=$ilsPublication->getLocalizedData('coverImage')}
+								{if ($ilsThemeOptions.showCoverImages|default:true) && $ilsCover && $ilsCover.uploadName}
+									<div class="ils-latest-card__cover">
+										<img src="{$publicFilesDir}/{$ilsCover.uploadName|escape:"url"}" alt="{$ilsCover.altText|escape|default:""}" loading="lazy">
+									</div>
+								{/if}
 								<h3 class="ils-latest-card__title">
 									<a href="{url page="article" op="view" path=$ilsSubmission->getBestId()}">
 										{$ilsPublication->getLocalizedTitle()|strip_unsafe_html}

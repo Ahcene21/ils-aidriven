@@ -11,6 +11,30 @@ drives the whole palette, in both light and dark mode.
 
 ## Features
 
+**Layout**
+
+- Three-column layout: a theme-owned menu rail on the left, the content column,
+  and the usual OJS block sidebar on the right. Either side column disappears
+  when it has nothing in it, and the whole thing is switchable to two columns or
+  one from the admin UI.
+- The left rail is a normal OJS navigation menu assigned to the theme's
+  `sidebar` menu area, so editors build it under Website Settings → Navigation
+  rather than by editing a template.
+- Utility bar above the masthead carrying the ISSNs and the user menu.
+
+**Articles and listings**
+
+- Article cards with cover-image thumbnails, linked author names (each opens an
+  author search), page range, DOI, abstract snippet and galley buttons.
+- Focus mode: clicking a cover image enlarges it over a dimmed, blurred page.
+- Optional metrics badge (Dimensions, Altmetric or PlumX) on cards and article
+  pages, keyed off the article's DOI.
+- Share links for Facebook, X, LinkedIn, WhatsApp, Telegram, Reddit, Mendeley
+  and email, plus copy-link. Plain anchors — no vendor widgets, so nothing is
+  requested from those services until a reader clicks.
+- Issue archive grouped under a heading per year, with core pagination intact.
+- "Journal information" table on the homepage, built from journal settings.
+
 **Design**
 
 - Token-driven palette — the journal's primary colour tints the neutral greys, so
@@ -119,6 +143,14 @@ All options live under **Website Settings → Appearance** once the theme is act
 | Structured data | On | Schema.org JSON-LD |
 | Web fonts | Off | Source Sans 3 + Source Serif 4 from Google Fonts |
 | Notice bar | empty | Plain-text strip above the masthead |
+| Column layout | Three columns | Rail + content + sidebar, or two, or one |
+| Utility bar | On | ISSNs and user menu above the masthead |
+| Journal information | On | Homepage table built from journal settings |
+| Article cover images | On | Thumbnails in article lists |
+| Abstract snippets | On | First ~260 characters in article lists |
+| Sharing | On | Share links on article pages |
+| Focus mode | On | Click a cover image to enlarge it |
+| Metrics badge | None | Dimensions, Altmetric or PlumX |
 
 Colour values are validated as hex before they reach the stylesheet, and the
 notice bar is escaped, so neither option can inject markup or CSS.
@@ -138,17 +170,19 @@ styles/
   _tokens.less               CSS custom properties, incl. the dark palette
   _base.less  _typography.less
   _pkp-core.less             Helper classes core OJS markup depends on
-  _layout.less _header.less _nav.less _footer.less
+  _layout.less _topbar.less _header.less _nav.less _rail.less _footer.less
   _components.less _forms.less _objects.less
-  _home.less _article.less _search.less
+  _home.less _article.less _search.less _share.less _focus.less
   _utilities.less _rtl.less _print.less
 
 js/main.js                   Progressive enhancement (no dependencies)
 
 templates/frontend/
-  components/header.tpl      Masthead + opens the page scaffolding
-  components/footer.tpl      Sidebar, footer, closes the scaffolding
+  components/header.tpl      Top bar, masthead, left rail, opens scaffolding
+  components/footer.tpl      Right sidebar, footer, closes the scaffolding
   pages/indexJournal.tpl     Journal homepage
+  pages/issueArchive.tpl     Archive grouped by year
+  objects/article_summary.tpl        Article card
   objects/announcement_summary.tpl
 
 locale/en/locale.po          Interface strings (mirrored in locale/en_US)
@@ -174,6 +208,10 @@ file is parsed, so you never have to edit the file to change a configured value.
 **Add your own CSS.** Add a stylesheet under
 **Website Settings → Appearance → Advanced**, or add an `@import` at the end of
 `styles/index.less`.
+
+**Fill the left rail.** Website Settings → Navigation → create a menu, assign it
+to the **sidebar** area. Nested items are indented rather than turned into
+flyouts, because the rail is a list of links rather than a menu bar.
 
 **Override another template.** Copy it from `templates/frontend/…` in the OJS
 core into the same path under this plugin's `templates/` directory. It takes

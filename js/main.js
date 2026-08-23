@@ -432,6 +432,25 @@
 		container.appendChild(button);
 	}
 
+	/**
+	 * Buttons that carry the text to copy in a data attribute, such as the
+	 * "Copy link" entry in the share row rendered by the plugin.
+	 */
+	function initInlineCopyButtons() {
+		$$('[data-ils-copy]').forEach(function (button) {
+			button.addEventListener('click', function () {
+				copyText(button.getAttribute('data-ils-copy')).then(function () {
+					button.classList.add('is-copied');
+					window.setTimeout(function () {
+						button.classList.remove('is-copied');
+					}, 1800);
+				}).catch(function () {
+					// The URL is still in the address bar; nothing to recover.
+				});
+			});
+		});
+	}
+
 	function initCopyButtons() {
 		var details = $('.obj_article_details');
 		if (!details) {
@@ -487,6 +506,121 @@
 		});
 	}
 
+	// -------------------------------------------------------------------------
+	// Focus mode
+	// -------------------------------------------------------------------------
+
+	/**
+	 * Enlarge an article cover over a dimmed, blurred page. One overlay element
+	 * is created lazily and reused for every trigger on the page.
+	 */
+	function initFocusMode() {
+		if (document.body.getAttribute('data-ils-focus-mode') !== 'true') {
+			return;
+		}
+
+		var triggers = $$('.ils-focus-trigger');
+		if (!triggers.length) {
+			return;
+		}
+
+		var overlay = null;
+		var image = null;
+		var caption = null;
+		var closeButton = null;
+		var lastTrigger = null;
+
+		function build() {
+			overlay = el('div', {
+				class: 'ils-focus-overlay',
+				role: 'dialog',
+				'aria-modal': 'true',
+				hidden: 'hidden'
+			});
+
+			closeButton = el('button', {
+				type: 'button',
+				class: 'ils-focus-overlay__close',
+				'aria-label': t('close', 'Close')
+			}, ICONS.close);
+
+			var figure = el('figure', { class: 'ils-focus-overlay__figure' });
+			image = el('img', { alt: '' });
+			caption = el('figcaption', { class: 'ils-focus-overlay__caption' });
+			figure.appendChild(image);
+			figure.appendChild(caption);
+
+			overlay.appendChild(closeButton);
+			overlay.appendChild(figure);
+			document.body.appendChild(overlay);
+
+			closeButton.addEventListener('click', close);
+			overlay.addEventListener('click', function (event) {
+				// Only a click on the backdrop itself dismisses the overlay.
+				if (event.target === overlay) {
+					close();
+				}
+			});
+			overlay.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape') {
+					close();
+				} else if (event.key === 'Tab') {
+					// Single focusable control, so the trap is just "stay here".
+					event.preventDefault();
+					closeButton.focus();
+				}
+			});
+		}
+
+		function open(trigger) {
+			if (!overlay) {
+				build();
+			}
+
+			var src = trigger.getAttribute('data-ils-focus-src');
+			if (!src) {
+				return;
+			}
+
+			var text = trigger.getAttribute('data-ils-focus-caption') || '';
+			lastTrigger = trigger;
+			image.setAttribute('src', src);
+			image.setAttribute('alt', text);
+			caption.textContent = text;
+			overlay.setAttribute('aria-label', text || t('enlarge', 'Enlarged cover image'));
+
+			overlay.hidden = false;
+			document.body.classList.add('ils-focus-open');
+			// Let the element paint hidden before transitioning it in.
+			window.requestAnimationFrame(function () {
+				overlay.classList.add('is-open');
+			});
+			closeButton.focus();
+		}
+
+		function close() {
+			if (!overlay || overlay.hidden) {
+				return;
+			}
+			overlay.classList.remove('is-open');
+			document.body.classList.remove('ils-focus-open');
+			window.setTimeout(function () {
+				overlay.hidden = true;
+				image.removeAttribute('src');
+			}, 160);
+			if (lastTrigger) {
+				lastTrigger.focus();
+				lastTrigger = null;
+			}
+		}
+
+		triggers.forEach(function (trigger) {
+			trigger.addEventListener('click', function () {
+				open(trigger);
+			});
+		});
+	}
+
 	function initFocusVisibleFallback() {
 		try {
 			document.querySelector(':focus-visible');
@@ -508,6 +642,8 @@
 		initReadingProgress();
 		initArticleOutline();
 		initCopyButtons();
+		initInlineCopyButtons();
+		initFocusMode();
 		initResponsiveTables();
 		initExternalLinks();
 	}

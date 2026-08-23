@@ -1,0 +1,116 @@
+// -----------------------------------------------------------------------------
+// Focus mode
+//
+// Clicking an article cover dims and blurs the page behind an enlarged copy of
+// the image, so nothing else competes with it. Built by main.js; the trigger
+// is a real <button> so it is keyboard reachable.
+// -----------------------------------------------------------------------------
+
+.ils-focus-trigger {
+	display: block;
+	width: 100%;
+	padding: 0;
+	background: none;
+	border: 0;
+	cursor: zoom-in;
+	border-radius: var(--ils-radius-sm);
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		transition: transform 240ms var(--ils-ease);
+	}
+
+	&:hover img,
+	&:focus-visible img {
+		transform: scale(1.04);
+	}
+}
+
+.ils-focus-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: clamp(1rem, 4vw, 3rem);
+	background: rgba(8, 12, 20, 0.72);
+	backdrop-filter: blur(14px) saturate(0.85);
+	-webkit-backdrop-filter: blur(14px) saturate(0.85);
+	opacity: 0;
+	transition: opacity 160ms var(--ils-ease);
+
+	&.is-open {
+		opacity: 1;
+	}
+
+	// Author styles beat the user-agent rule for [hidden], so restate it.
+	&[hidden] {
+		display: none;
+	}
+}
+
+// Browsers without backdrop-filter get a heavier dim instead of a blur.
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.ils-focus-overlay {
+		background: rgba(8, 12, 20, 0.92);
+	}
+}
+
+.ils-focus-overlay__figure {
+	margin: 0;
+	max-width: min(92vw, 62rem);
+	text-align: center;
+
+	img {
+		display: block;
+		max-width: 100%;
+		max-height: 76vh;
+		width: auto;
+		margin: 0 auto;
+		border-radius: var(--ils-radius);
+		box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.ils-focus-overlay__caption {
+	margin-top: 1rem;
+	color: #f3f6fb;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	text-wrap: balance;
+}
+
+.ils-focus-overlay__close {
+	position: absolute;
+	top: clamp(0.75rem, 2vw, 1.5rem);
+	inset-inline-end: clamp(0.75rem, 2vw, 1.5rem);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	color: #ffffff;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: var(--ils-radius-pill);
+	cursor: pointer;
+
+	svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: currentColor;
+	}
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.26);
+	}
+}
+
+// Stop the page behind the overlay from scrolling.
+body.ils-focus-open {
+	overflow: hidden;
+}

@@ -11,13 +11,16 @@
 
 // Flexbox rather than grid so that the sidebar column simply disappears when no
 // block plugin has rendered anything into it.
+// Three columns: a theme-owned menu rail, the main column, and the OJS block
+// sidebar. Flexbox with explicit ordering rather than grid, so a column that
+// renders nothing simply leaves the row instead of holding an empty track.
 .ils-content,
 .pkp_structure_content {
 	.ils-container();
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	gap: 2.5rem;
+	gap: 2rem;
 	flex: 1 0 auto;
 	padding-top: 2.5rem;
 	padding-bottom: 4rem;
@@ -25,21 +28,53 @@
 
 .ils-main,
 .pkp_structure_main {
-	flex: 1 1 32rem;
+	flex: 1 1 100%;
+	order: 1;
 	min-width: 0;
 }
 
 .ils-sidebar {
-	flex: 0 1 20rem;
+	flex: 1 1 100%;
+	order: 3;
 	min-width: 0;
-	width: 100%;
+}
+
+.ils-rail {
+	flex: 1 1 100%;
+	order: 4;
+	min-width: 0;
 }
 
 @media (min-width: 1024px) {
+	.ils-main,
+	.pkp_structure_main {
+		flex: 1 1 28rem;
+		order: 2;
+	}
+
 	.ils-sidebar {
+		flex: 0 1 18rem;
+		order: 3;
 		position: sticky;
 		top: ~"calc(var(--ils-header-height) + 1.5rem)";
 	}
+}
+
+@media (min-width: 1240px) {
+	.ils-rail {
+		flex: 0 1 14.5rem;
+		order: 1;
+		position: sticky;
+		top: ~"calc(var(--ils-header-height) + 1.5rem)";
+	}
+}
+
+// Single-sidebar and no-sidebar variants give the main column more room.
+.ils-content--none .ils-main,
+.ils-content--none .pkp_structure_main {
+	flex-basis: 100%;
+	max-width: 60rem;
+	margin-inline: auto;
 }
 
 // Full-bleed sections escape the container padding without a wrapper element.
