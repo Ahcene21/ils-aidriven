@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// PKP helper classes
+//
+// This theme does not inherit from the default theme, so the helper classes
+// that core OJS templates emit have to be defined here. `.pkp_screen_reader`
+// in particular is load-bearing: without it, screen-reader-only labels render
+// as visible text all over the site.
+// -----------------------------------------------------------------------------
+
+.pkp_screen_reader,
+.pkp_helpers_display_none_visually {
+	.ils-visually-hidden();
+
+	// Skip links and other focusable helpers must come back into view.
+	&:focus,
+	&:active {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+	}
+}
+
+.pkp_helpers_display_none {
+	display: none;
+}
+
+.pkp_helpers_clear {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.pkp_helpers_align_left { float: left; }
+.pkp_helpers_align_right { float: right; }
+
+.pkp_helpers_align_center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pkp_helpers_text_left { text-align: left; }
+.pkp_helpers_text_right { text-align: right; }
+.pkp_helpers_text_center { text-align: center; }
+
+.pkp_helpers_flatlist,
+.pkp_unstyled_list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.pkp_helpers_half { width: 50%; }
+.pkp_helpers_third { width: 33.33333%; }
+.pkp_helpers_quarter { width: 25%; }
+
+// Core sometimes emits an empty <h2> purely for document outline purposes.
+.pkp_structure_main > h1:empty,
+.pkp_structure_main > h2:empty {
+	display: none;
+}

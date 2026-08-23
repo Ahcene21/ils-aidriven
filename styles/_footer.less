@@ -1,0 +1,101 @@
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+
+.ils-footer {
+	margin-top: auto;
+	background: var(--ils-footer-bg);
+	color: var(--ils-footer-text);
+	font-size: 0.94rem;
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: fade(#ffffff, 40%);
+
+		&:hover {
+			color: #ffffff;
+			text-decoration-color: currentColor;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #ffffff;
+		font-size: 0.82rem;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+}
+
+.ils-footer__inner {
+	.ils-container();
+	display: grid;
+	gap: 2rem;
+	padding-top: 3rem;
+	padding-bottom: 2.5rem;
+}
+
+@media (min-width: 860px) {
+	.ils-footer__inner {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+		gap: 3rem;
+	}
+}
+
+.ils-footer__brand {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.ils-footer__title {
+	font-family: var(--ils-font-heading);
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #ffffff;
+	text-transform: none;
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.ils-footer__issn {
+	font-size: 0.86rem;
+	opacity: 0.85;
+}
+
+.ils-footer__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0.9rem;
+
+	li {
+		margin: 0;
+	}
+}
+
+.ils-footer__content {
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-footer__bar {
+	border-top: 1px solid fade(#ffffff, 14%);
+}
+
+.ils-footer__bar-inner {
+	.ils-container();
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem 1.5rem;
+	padding-top: 1.1rem;
+	padding-bottom: 1.1rem;
+	font-size: 0.85rem;
+	opacity: 0.9;
+}

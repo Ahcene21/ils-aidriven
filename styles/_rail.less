@@ -1,0 +1,126 @@
+// -----------------------------------------------------------------------------
+// Left menu rail
+//
+// Fed by the theme's own "sidebar" navigation menu area, so its contents are
+// whatever the journal manager put there. Below the three-column breakpoint it
+// collapses into a horizontal chip list at the foot of the page, which reads
+// better on a phone than a long vertical list of links.
+// -----------------------------------------------------------------------------
+
+.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.ils-rail__block {
+	.ils-card();
+	padding: 1.15rem 1.25rem;
+
+	> .title {
+		.ils-heading();
+		font-size: 0.78rem;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+		margin-bottom: 0.85rem;
+		padding-bottom: 0.6rem;
+		border-bottom: 1px solid var(--ils-border);
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: 0;
+	}
+
+	// Nested menu items are indented rather than turned into a flyout: this is
+	// a static list of links, not an interactive menu bar.
+	ul ul {
+		margin: 0.25rem 0 0.5rem;
+		padding-inline-start: 0.85rem;
+		border-inline-start: 2px solid var(--ils-border);
+
+		a {
+			font-size: 0.86rem;
+			font-weight: 400;
+		}
+	}
+}
+
+// Vertical list at the three-column breakpoint.
+@media (min-width: 1240px) {
+	.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.ils-rail__block {
+		li + li {
+			border-top: 1px solid var(--ils-border);
+		}
+
+		a {
+			display: block;
+			padding: 0.55rem 0;
+			font-size: 0.92rem;
+			font-weight: 600;
+			text-decoration: none;
+			color: var(--ils-text);
+
+			&:hover,
+			&:focus-visible {
+				color: var(--ils-primary);
+			}
+		}
+
+		ul ul li + li {
+			border-top: 0;
+		}
+	}
+}
+
+// Horizontal chips everywhere else.
+@media (max-width: 1239px) {
+	.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.ils-rail__block {
+		> ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+
+		a {
+			display: inline-flex;
+			padding: 0.3rem 0.75rem;
+			font-size: 0.86rem;
+			text-decoration: none;
+			color: var(--ils-text);
+			background: var(--ils-surface-alt);
+			border: 1px solid var(--ils-border);
+			border-radius: var(--ils-radius-pill);
+
+			&:hover,
+			&:focus-visible {
+				color: var(--ils-primary);
+				border-color: var(--ils-primary);
+			}
+		}
+
+		ul ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			border-inline-start: 0;
+			padding-inline-start: 0;
+			margin: 0;
+		}
+	}
+}

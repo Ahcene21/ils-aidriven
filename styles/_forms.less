@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// Forms
+//
+// Styles the generic `.cmp_form` markup that core OJS uses for login,
+// registration, search, contact and submission-related front-end forms.
+// -----------------------------------------------------------------------------
+
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.55rem 0.75rem;
+	color: var(--ils-text);
+	background: var(--ils-surface);
+	border: 1px solid var(--ils-border-strong);
+	border-radius: var(--ils-radius-sm);
+	transition: border-color var(--ils-speed) var(--ils-ease), box-shadow var(--ils-speed) var(--ils-ease);
+
+	&:focus {
+		border-color: var(--ils-primary);
+		box-shadow: 0 0 0 3px var(--ils-primary-soft);
+		outline: none;
+	}
+
+	&::placeholder {
+		color: var(--ils-text-muted);
+	}
+}
+
+textarea {
+	min-height: 9rem;
+	resize: vertical;
+}
+
+select {
+	// Leave room for the native chevron.
+	padding-inline-end: 2rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	width: 1rem;
+	height: 1rem;
+	margin-inline-end: 0.5rem;
+	accent-color: var(--ils-primary);
+	vertical-align: middle;
+}
+
+label {
+	display: block;
+}
+
+.cmp_form,
+.pkp_form {
+	max-width: 44rem;
+
+	fieldset {
+		margin: 0 0 2rem;
+		padding: 0;
+		border: 0;
+
+		&:last-of-type {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	legend {
+		.ils-heading();
+		display: block;
+		width: 100%;
+		padding: 0 0 0.6rem;
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+		border-bottom: 1px solid var(--ils-border);
+	}
+
+	.fields {
+		display: grid;
+		gap: 1.15rem;
+	}
+
+	.form-group,
+	.fields > div {
+		min-width: 0;
+	}
+
+	.label,
+	label > .label {
+		display: block;
+		margin-bottom: 0.35rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--ils-heading);
+	}
+
+	.required,
+	.pkp_form_required {
+		color: var(--ils-danger);
+	}
+
+	.description,
+	.sub_label {
+		margin-top: 0.35rem;
+		font-size: 0.85rem;
+		color: var(--ils-text-muted);
+	}
+
+	.error,
+	.pkp_form_error {
+		margin-top: 0.35rem;
+		font-size: 0.85rem;
+		color: var(--ils-danger);
+		font-weight: 600;
+	}
+
+	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 1.75rem;
+		padding-top: 1.25rem;
+		border-top: 1px solid var(--ils-border);
+	}
+
+	// Checkbox and radio rows read better with the control beside the text.
+	.optin,
+	.checkbox,
+	.privacy_consent {
+		label {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.15rem;
+			font-size: 0.95rem;
+		}
+	}
+}
+
+@media (min-width: 640px) {
+	.cmp_form .fields.two_column,
+	.cmp_form fieldset.identity .fields {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+// The login form is a narrow, centred card.
+.cmp_form.login,
+.cmp_form.register_form_min {
+	.ils-card();
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 2rem;
+}

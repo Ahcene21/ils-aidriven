@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Search and archive pages
+// -----------------------------------------------------------------------------
+
+.page_search {
+	.search_input,
+	.cmp_form.search {
+		.ils-card();
+		padding: 1.35rem;
+		margin-bottom: 2rem;
+	}
+
+	.search_advanced_wrapper,
+	.search_advanced {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--ils-border);
+	}
+
+	.search_filters,
+	.pkp_search_filters {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+	}
+
+	.search_results_count,
+	.search_results_stats {
+		margin-bottom: 1.25rem;
+		font-size: 0.92rem;
+		color: var(--ils-text-muted);
+	}
+
+	.search_results {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.ils-empty-state {
+	.ils-card();
+	padding: 2.5rem 1.5rem;
+	text-align: center;
+	color: var(--ils-text-muted);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

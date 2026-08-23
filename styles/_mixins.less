@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------------------------
+
+.ils-container() {
+	width: 100%;
+	max-width: var(--ils-container-max);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--ils-gutter);
+	padding-right: var(--ils-gutter);
+}
+
+.ils-card() {
+	background: var(--ils-surface);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+	box-shadow: var(--ils-shadow-sm);
+}
+
+.ils-focus-ring() {
+	outline: 3px solid var(--ils-focus);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+// Visually hidden but still announced by screen readers.
+.ils-visually-hidden() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+// Clamp a block of text to a fixed number of lines.
+.ils-line-clamp(@lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: @lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.ils-heading() {
+	font-family: var(--ils-font-heading);
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -0.011em;
+	color: var(--ils-heading);
+	margin: 0 0 0.5em;
+	text-wrap: balance;
+}

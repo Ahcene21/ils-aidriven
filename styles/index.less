@@ -1,0 +1,40 @@
+/**
+ * @file styles/index.less
+ *
+ * Copyright (c) 2026 ILS AI-Driven
+ * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+ *
+ * Entry point for the ILS AI-Driven theme stylesheet. OJS compiles this file
+ * with its bundled LESS compiler and appends the journal's configured options
+ * as variable overrides, so the import order matters: tokens first, then the
+ * layers that consume them.
+ */
+
+@import "_variables.less";
+@import "_mixins.less";
+@import "_tokens.less";
+
+@import "_base.less";
+@import "_typography.less";
+@import "_pkp-core.less";
+
+@import "_layout.less";
+@import "_topbar.less";
+@import "_header.less";
+@import "_nav.less";
+@import "_rail.less";
+@import "_footer.less";
+
+@import "_components.less";
+@import "_forms.less";
+@import "_objects.less";
+
+@import "_home.less";
+@import "_article.less";
+@import "_search.less";
+@import "_share.less";
+@import "_focus.less";
+
+@import "_utilities.less";
+@import "_rtl.less";
+@import "_print.less";

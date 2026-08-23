@@ -1,0 +1,130 @@
+// -----------------------------------------------------------------------------
+// Runtime tokens
+//
+// LESS resolves the journal's configured options at compile time; everything
+// after that is a CSS custom property so that the colour scheme can be switched
+// in the browser without shipping a second stylesheet.
+// -----------------------------------------------------------------------------
+
+:root {
+	--ils-font-heading: @font-heading;
+	--ils-font-body: @font-body;
+	--ils-font-mono: @font-mono;
+	--ils-font-size: @base-font-size;
+	--ils-line-height: @line-height;
+
+	--ils-container-max: @container-max;
+	--ils-reading-max: @reading-max;
+	--ils-radius: @radius;
+	--ils-radius-sm: ~"max(2px, calc(var(--ils-radius) / 2))";
+	--ils-radius-pill: 999px;
+	--ils-gutter: @gutter;
+	--ils-header-height: 4.5rem;
+
+	--ils-bg: #ffffff;
+	--ils-bg-alt: @ink-050;
+	--ils-surface: #ffffff;
+	--ils-surface-alt: @ink-050;
+	--ils-surface-sunken: @ink-100;
+	--ils-border: @ink-200;
+	--ils-border-strong: @ink-400;
+
+	--ils-text: @ink-900;
+	--ils-text-muted: @ink-500;
+	--ils-heading: @ink-900;
+
+	--ils-primary: @primary;
+	--ils-primary-hover: darken(@primary, 9%);
+	--ils-primary-contrast: #ffffff;
+	--ils-primary-soft: mix(@primary, #ffffff, 9%);
+	--ils-primary-softer: mix(@primary, #ffffff, 4%);
+
+	--ils-accent: @accent;
+	--ils-accent-contrast: #ffffff;
+	--ils-accent-soft: mix(@accent, #ffffff, 10%);
+
+	--ils-success: @success;
+	--ils-warning: @warning;
+	--ils-danger: @danger;
+
+	--ils-link: @primary;
+	--ils-link-hover: darken(@primary, 12%);
+	--ils-focus: @accent;
+	--ils-selection: mix(@accent, #ffffff, 24%);
+
+	--ils-shadow-sm: ~"0 1px 2px rgba(11, 18, 32, .05)";
+	--ils-shadow-md: ~"0 2px 4px rgba(11, 18, 32, .05), 0 8px 24px rgba(11, 18, 32, .07)";
+	--ils-shadow-lg: ~"0 4px 8px rgba(11, 18, 32, .06), 0 24px 48px rgba(11, 18, 32, .12)";
+
+	--ils-ease: ~"cubic-bezier(.2, .7, .3, 1)";
+	--ils-speed: 180ms;
+
+	--ils-topbar-bg: darken(@primary, 12%);
+	--ils-topbar-text: mix(#ffffff, @primary, 82%);
+	--ils-header-bg: #ffffff;
+	--ils-header-text: @ink-900;
+	--ils-masthead-bg: @primary;
+	--ils-masthead-text: #ffffff;
+	--ils-footer-bg: @ink-900;
+	--ils-footer-text: mix(#ffffff, @ink-200, 55%);
+
+	color-scheme: light;
+}
+
+// Dark palette. Kept as a mixin so the same declarations can serve the explicit
+// toggle and the no-JavaScript operating-system preference.
+.ils-dark-tokens() {
+	--ils-bg: mix(@primary, #0A0F16, 10%);
+	--ils-bg-alt: mix(@primary, #070B11, 8%);
+	--ils-surface: mix(@primary, #121A25, 10%);
+	--ils-surface-alt: mix(@primary, #16202D, 12%);
+	--ils-surface-sunken: mix(@primary, #0C121A, 10%);
+	--ils-border: mix(@primary, #2A3646, 18%);
+	--ils-border-strong: mix(@primary, #47566B, 20%);
+
+	--ils-text: #E4E9F2;
+	--ils-text-muted: #A2AEC2;
+	--ils-heading: #F2F5FA;
+
+	--ils-primary: lighten(desaturate(@primary, 8%), 32%);
+	--ils-primary-hover: lighten(desaturate(@primary, 8%), 42%);
+	--ils-primary-contrast: #0A0F16;
+	--ils-primary-soft: mix(@primary, #121A25, 26%);
+	--ils-primary-softer: mix(@primary, #121A25, 14%);
+
+	--ils-accent: lighten(@accent, 22%);
+	--ils-accent-contrast: #1A0B03;
+	--ils-accent-soft: mix(@accent, #121A25, 26%);
+
+	--ils-link: lighten(desaturate(@primary, 8%), 34%);
+	--ils-link-hover: lighten(desaturate(@primary, 8%), 46%);
+	--ils-focus: lighten(@accent, 20%);
+	--ils-selection: mix(@accent, #121A25, 45%);
+
+	--ils-shadow-sm: ~"0 1px 2px rgba(0, 0, 0, .4)";
+	--ils-shadow-md: ~"0 2px 4px rgba(0, 0, 0, .35), 0 8px 24px rgba(0, 0, 0, .45)";
+	--ils-shadow-lg: ~"0 4px 8px rgba(0, 0, 0, .4), 0 24px 48px rgba(0, 0, 0, .55)";
+
+	--ils-topbar-bg: mix(@primary, #05080D, 18%);
+	--ils-topbar-text: #AEBACD;
+	--ils-header-bg: mix(@primary, #0D141D, 12%);
+	--ils-header-text: #E4E9F2;
+	--ils-masthead-bg: mix(@primary, #0A0F16, 32%);
+	--ils-masthead-text: #F2F5FA;
+	--ils-footer-bg: mix(@primary, #070B11, 10%);
+	--ils-footer-text: #AEBACD;
+
+	color-scheme: dark;
+}
+
+[data-ils-scheme="dark"] {
+	.ils-dark-tokens();
+}
+
+// Without JavaScript the bootstrap script never runs and no data attribute is
+// written, so fall back to the reader's operating-system preference.
+@media (prefers-color-scheme: dark) {
+	html:not([data-ils-scheme]) {
+		.ils-dark-tokens();
+	}
+}

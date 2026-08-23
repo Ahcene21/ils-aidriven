@@ -1,0 +1,431 @@
+// -----------------------------------------------------------------------------
+// Journal homepage
+// -----------------------------------------------------------------------------
+
+.ils-hero {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 2.5rem;
+	padding: 2.25rem;
+	background: var(--ils-surface-alt);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+}
+
+.ils-hero__inner {
+	display: grid;
+	gap: 2rem;
+	align-items: center;
+}
+
+.ils-hero__title {
+	font-size: ~"clamp(1.8rem, 1.3rem + 2.2vw, 2.75rem)";
+	margin-bottom: 0.75rem;
+}
+
+.ils-hero__lead {
+	max-width: 40rem;
+	font-size: 1.05rem;
+	color: var(--ils-text-muted);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.75rem;
+}
+
+.ils-hero__figure {
+	margin: 0;
+
+	img {
+		display: block;
+		width: 100%;
+		border-radius: var(--ils-radius);
+		box-shadow: var(--ils-shadow-lg);
+	}
+}
+
+@media (max-width: 599px) {
+	.ils-hero {
+		padding: 1.5rem;
+	}
+}
+
+@media (min-width: 860px) {
+	.ils-hero {
+		padding: 3rem;
+	}
+
+	.ils-hero__inner {
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+	}
+
+	.ils-hero--no-figure .ils-hero__inner {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.ils-hero__figure img {
+		max-height: 22rem;
+		width: auto;
+		margin-inline-start: auto;
+	}
+}
+
+.ils-page-title {
+	margin-bottom: 1.25rem;
+}
+
+// --- Key facts strip ---------------------------------------------------------
+
+.ils-facts {
+	display: grid;
+	gap: 1px;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+	margin-bottom: 3rem;
+	background: var(--ils-border);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+	overflow: hidden;
+}
+
+.ils-fact {
+	padding: 1.1rem 1.25rem;
+	background: var(--ils-surface);
+	text-align: center;
+
+	&__label {
+		display: block;
+		font-size: 0.74rem;
+		font-weight: 700;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+	}
+
+	&__value {
+		display: block;
+		margin-top: 0.2rem;
+		font-family: var(--ils-font-heading);
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: var(--ils-heading);
+		word-break: break-word;
+	}
+}
+
+// --- Homepage sections -------------------------------------------------------
+
+.page_index_journal {
+	> .ils-section:first-child {
+		margin-top: 0;
+	}
+}
+
+.ils-announcement-list {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.ils-latest-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.ils-latest-card {
+	.ils-card();
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+	height: 100%;
+	padding: 1.25rem;
+	transition: box-shadow var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease);
+
+	&:hover {
+		box-shadow: var(--ils-shadow-md);
+		transform: translateY(-2px);
+	}
+
+	&__section {
+		font-size: 0.74rem;
+		font-weight: 700;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--ils-accent);
+	}
+
+	&__title {
+		.ils-heading();
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.35;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			// Whole card becomes the hit area.
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+
+			&:hover {
+				color: var(--ils-primary);
+			}
+		}
+	}
+
+	&__authors {
+		font-size: 0.88rem;
+		color: var(--ils-text-muted);
+	}
+
+	&__footer {
+		margin-top: auto;
+		padding-top: 0.75rem;
+		font-size: 0.82rem;
+		color: var(--ils-text-muted);
+	}
+}
+
+.ils-latest-grid > li {
+	position: relative;
+}
+
+// --- Additional home content -------------------------------------------------
+
+.additional_content,
+.homepage_about {
+	max-width: var(--ils-reading-max);
+	margin-top: 2.5rem;
+}
+
+// --- Site index (multi-journal installs) ------------------------------------
+
+.page_index_site {
+	.journals ul {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.journals li {
+		.ils-card();
+		margin: 0;
+		padding: 1.25rem;
+	}
+}
+
+// --- Journal information -----------------------------------------------------
+
+.ils-journal-info__list {
+	margin: 0;
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+	overflow: hidden;
+}
+
+.ils-journal-info__row {
+	display: grid;
+	gap: 0.15rem 1rem;
+	padding: 0.7rem 1rem;
+	background: var(--ils-surface);
+
+	+ .ils-journal-info__row {
+		border-top: 1px solid var(--ils-border);
+	}
+
+	&:nth-child(even) {
+		background: var(--ils-surface-alt);
+	}
+
+	dt {
+		font-size: 0.82rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+	}
+
+	dd {
+		margin: 0;
+		color: var(--ils-text);
+		word-break: break-word;
+	}
+}
+
+@media (min-width: 560px) {
+	.ils-journal-info__row {
+		grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+		align-items: baseline;
+	}
+}
+
+// --- Cover thumbnails on the latest-articles cards ---------------------------
+
+.ils-latest-card__cover {
+	margin: -1.25rem -1.25rem 0.35rem;
+
+	img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		background: var(--ils-surface-sunken);
+	}
+}
+
+// --- Archive grouped by year -------------------------------------------------
+
+.ils-archive-year {
+	margin-bottom: 3rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&__heading {
+		font-size: 1.25rem;
+		padding-bottom: 0.6rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 2px solid var(--ils-border);
+	}
+}
+
+// --- Journal profile ---------------------------------------------------------
+//
+// The default homepage opening: the cover beside the description, rather than a
+// large type banner. Denser, and closer to how a reader meets a journal.
+
+.ils-profile {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 1.75rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2.25rem;
+	border-bottom: 1px solid var(--ils-border);
+}
+
+.ils-profile__cover {
+	flex: 0 0 11rem;
+	max-width: 42%;
+
+	img {
+		display: block;
+		width: 100%;
+		border: 1px solid var(--ils-border);
+		border-radius: var(--ils-radius-sm);
+		box-shadow: var(--ils-shadow-md);
+		background: var(--ils-surface-sunken);
+	}
+}
+
+.ils-profile__body {
+	flex: 1 1 20rem;
+	min-width: 0;
+}
+
+.ils-profile__title {
+	font-size: ~"clamp(1.5rem, 1.2rem + 1.4vw, 2.15rem)";
+	margin-bottom: 0.6rem;
+}
+
+.ils-profile__lead {
+	color: var(--ils-text-muted);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-profile__facts {
+	display: grid;
+	gap: 0.3rem;
+	margin: 1.1rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.15rem 0.75rem;
+		margin: 0;
+		font-size: 0.92rem;
+	}
+
+	.label {
+		flex: 0 0 8.5rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+		padding-top: 0.2rem;
+	}
+
+	.value {
+		flex: 1 1 12rem;
+		color: var(--ils-text);
+		font-weight: 600;
+	}
+}
+
+.ils-profile__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-top: 1.35rem;
+}
+
+@media (max-width: 559px) {
+	.ils-profile__cover {
+		flex-basis: 8rem;
+	}
+}
+
+// --- Index and partner logos -------------------------------------------------
+//
+// Journals paste these into "Additional Homepage Content" as a run of images;
+// this lays that paragraph out as a tidy strip instead of a ragged column.
+
+.additional_content p img,
+.ils-logo-strip img {
+	max-height: 4.25rem;
+	width: auto;
+	margin: 0.35rem 0.9rem 0.35rem 0;
+	vertical-align: middle;
+}
+
+.ils-logo-strip {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1.25rem;
+}

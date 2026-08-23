@@ -1,0 +1,347 @@
+// -----------------------------------------------------------------------------
+// Navigation
+//
+// Targets the markup that OJS's {load_menu} helper produces, so journal
+// managers keep full control of the menu from Website Settings > Navigation.
+// -----------------------------------------------------------------------------
+
+.ils-header__nav {
+	background: var(--ils-header-bg);
+	border-top: 1px solid var(--ils-border);
+}
+
+.ils-header__nav-inner {
+	.ils-container();
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	min-height: 3.1rem;
+}
+
+.ils-nav-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 0.9rem;
+	margin: 0.35rem 0;
+	display: none;
+	font: inherit;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--ils-text);
+	background: var(--ils-surface-alt);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius-sm);
+	cursor: pointer;
+
+	svg {
+		width: 1.05rem;
+		height: 1.05rem;
+		fill: currentColor;
+	}
+
+	&[aria-expanded="true"] .ils-nav-toggle__open,
+	&[aria-expanded="false"] .ils-nav-toggle__close {
+		display: none;
+	}
+}
+
+// Without JavaScript the menu must stay visible, so the toggle only appears
+// once main.js has upgraded the navigation - and only at narrow widths, where
+// the drawer behaviour it controls is actually in effect.
+.ils-js .ils-nav-toggle {
+	display: inline-flex;
+}
+
+@media (min-width: 768px) {
+	.ils-nav-toggle,
+	.ils-js .ils-nav-toggle {
+		display: none;
+	}
+}
+
+.ils-primary-nav {
+	flex: 1 1 auto;
+	min-width: 0;
+
+	> ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		gap: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: 0;
+		position: relative;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.85rem 0.9rem;
+		color: var(--ils-text);
+		font-size: 0.96rem;
+		font-weight: 600;
+		text-decoration: none;
+		border-bottom: 3px solid transparent;
+		transition: color var(--ils-speed) var(--ils-ease), border-color var(--ils-speed) var(--ils-ease), background var(--ils-speed) var(--ils-ease);
+
+		&:hover,
+		&:focus-visible {
+			color: var(--ils-primary);
+			border-bottom-color: var(--ils-primary);
+		}
+	}
+
+	// OJS marks the active entry with .current on the list item.
+	li.current > a,
+	li.is-current > a {
+		color: var(--ils-primary);
+		border-bottom-color: var(--ils-primary);
+	}
+}
+
+// --- Submenus ----------------------------------------------------------------
+
+.ils-nav-expand {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.4rem;
+	height: 1.4rem;
+	padding: 0;
+	margin-inline-start: -0.35rem;
+	color: inherit;
+	background: none;
+	border: 0;
+	cursor: pointer;
+
+	svg {
+		width: 0.72rem;
+		height: 0.72rem;
+		fill: currentColor;
+		transition: transform var(--ils-speed) var(--ils-ease);
+	}
+
+	&[aria-expanded="true"] svg {
+		transform: rotate(180deg);
+	}
+}
+
+@media (min-width: 768px) {
+	.ils-primary-nav {
+		ul ul {
+			position: absolute;
+			top: 100%;
+			inset-inline-start: 0;
+			z-index: 40;
+			display: block;
+			min-width: 15rem;
+			margin: 0;
+			padding: 0.35rem 0;
+			list-style: none;
+			background: var(--ils-surface);
+			border: 1px solid var(--ils-border);
+			border-radius: var(--ils-radius);
+			box-shadow: var(--ils-shadow-lg);
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-0.35rem);
+			transition: opacity var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease), visibility var(--ils-speed);
+		}
+
+		ul ul a {
+			padding: 0.55rem 1rem;
+			font-weight: 500;
+			border-bottom: 0;
+			border-inline-start: 3px solid transparent;
+
+			&:hover,
+			&:focus-visible {
+				background: var(--ils-primary-softer);
+				border-inline-start-color: var(--ils-primary);
+			}
+		}
+
+		// Third level opens to the side.
+		ul ul ul {
+			top: -0.35rem;
+			inset-inline-start: 100%;
+		}
+
+		li:hover > ul,
+		li:focus-within > ul,
+		li.is-open > ul {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
+}
+
+// --- Mobile drawer -----------------------------------------------------------
+
+@media (max-width: 767px) {
+	.ils-header__nav-inner {
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	.ils-js .ils-primary-nav {
+		flex-basis: 100%;
+		display: none;
+
+		&.is-open {
+			display: block;
+			padding-bottom: 0.75rem;
+		}
+	}
+
+	.ils-primary-nav {
+		> ul {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		a {
+			padding: 0.7rem 0.25rem;
+			border-bottom: 1px solid var(--ils-border);
+		}
+
+		ul ul {
+			display: none;
+			margin: 0 0 0.5rem;
+			padding: 0 0 0 1rem;
+			list-style: none;
+			border-inline-start: 2px solid var(--ils-border);
+		}
+
+		li.is-open > ul {
+			display: block;
+		}
+
+		li > ul a {
+			font-weight: 500;
+			border-bottom: 0;
+			padding: 0.5rem 0.25rem;
+		}
+	}
+}
+
+// --- User / secondary menu ---------------------------------------------------
+
+.ils-user-nav {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.2rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: 0;
+		position: relative;
+	}
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.4rem 0.7rem;
+		color: inherit;
+		font-size: 0.88rem;
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: var(--ils-radius-pill);
+
+		&:hover,
+		&:focus-visible {
+			background: rgba(255, 255, 255, 0.18);
+		}
+	}
+
+	ul ul {
+		position: absolute;
+		top: 100%;
+		inset-inline-end: 0;
+		z-index: 40;
+		flex-direction: column;
+		align-items: stretch;
+		min-width: 12rem;
+		padding: 0.35rem 0;
+		background: var(--ils-surface);
+		border: 1px solid var(--ils-border);
+		border-radius: var(--ils-radius);
+		box-shadow: var(--ils-shadow-lg);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity var(--ils-speed) var(--ils-ease), visibility var(--ils-speed);
+
+		a {
+			color: var(--ils-text);
+			border-radius: 0;
+			padding: 0.5rem 0.9rem;
+
+			&:hover {
+				background: var(--ils-primary-softer);
+			}
+		}
+	}
+
+	li:hover > ul,
+	li:focus-within > ul,
+	li.is-open > ul {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@media (max-width: 600px) {
+	.ils-user-nav a {
+		padding: 0.35rem 0.5rem;
+		font-size: 0.82rem;
+	}
+}
+
+// --- Breadcrumbs (core markup) ----------------------------------------------
+
+.cmp_breadcrumbs {
+	margin-bottom: 1.5rem;
+	font-size: 0.87rem;
+	color: var(--ils-text-muted);
+
+	ol {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.separator {
+		opacity: 0.55;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

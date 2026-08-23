@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// Design tokens
+//
+// Every value here is a default. IlsAiDrivenThemePlugin::getLessVariables()
+// appends overrides after this file is parsed, and LESS resolves variables
+// lazily with the last declaration winning, so the journal manager's choices in
+// Website Settings > Appearance take precedence without any edit to this file.
+// -----------------------------------------------------------------------------
+
+// Brand
+@primary: #0F4C81;
+@accent: #C2410C;
+
+// Typography
+@font-sans: ~"'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+@font-serif: ~"'Source Serif 4', Charter, 'Iowan Old Style', Georgia, 'Times New Roman', serif";
+@font-mono: ~"ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace";
+@font-heading: @font-serif;
+@font-body: @font-sans;
+@base-font-size: 16px;
+@line-height: 1.65;
+
+// Layout
+@container-max: 1280px;
+@reading-max: 44rem;
+@radius: 8px;
+@gutter: 1.5rem;
+
+// Neutral ramp. Slightly tinted toward the brand hue so that greys never look
+// muddy next to the primary colour.
+@ink-900: mix(#0B1220, @primary, 88%);
+@ink-700: mix(#1F2937, @primary, 88%);
+@ink-500: mix(#4B5563, @primary, 92%);
+@ink-400: mix(#6B7280, @primary, 94%);
+@ink-200: mix(#D8DEE7, @primary, 94%);
+@ink-100: mix(#E9EDF3, @primary, 96%);
+@ink-050: mix(#F4F6FA, @primary, 97%);
+
+// Semantic
+@success: #15803D;
+@warning: #B45309;
+@danger: #B91C1C;
+
+// Breakpoints are written literally inside @media rules so that the compiler
+// never has to interpolate them; these exist for documentation and for mixins.
+@screen-sm: 480px;
+@screen-md: 768px;
+@screen-lg: 1024px;
+@screen-xl: 1280px;

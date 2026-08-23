@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// Social sharing and metrics
+//
+// Plain links, no vendor widgets: nothing is requested from these services
+// until a reader actually clicks. Brand colours are darkened where the stock
+// value would not reach 4.5:1 against white label text.
+// -----------------------------------------------------------------------------
+
+.ils-share__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin: 0;
+	}
+}
+
+.ils-share__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.35rem 0.85rem;
+	font-family: var(--ils-font-body);
+	font-size: 0.83rem;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #ffffff;
+	background: var(--ils-share-bg, #374151);
+	border: 1px solid transparent;
+	border-radius: var(--ils-radius-pill);
+	text-decoration: none;
+	cursor: pointer;
+	transition: filter var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease);
+
+	&:hover,
+	&:focus-visible {
+		color: #ffffff;
+		filter: brightness(1.15);
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+.ils-share__link--facebook { --ils-share-bg: #0E4DA4; }
+.ils-share__link--x        { --ils-share-bg: #14171A; }
+.ils-share__link--linkedin { --ils-share-bg: #0A66C2; }
+.ils-share__link--whatsapp { --ils-share-bg: #0F7B63; }
+.ils-share__link--telegram { --ils-share-bg: #17698F; }
+.ils-share__link--reddit   { --ils-share-bg: #B32D00; }
+.ils-share__link--mendeley { --ils-share-bg: #8C1420; }
+.ils-share__link--email    { --ils-share-bg: #4B5563; }
+.ils-share__link--copy     { --ils-share-bg: #374151; }
+
+// The near-black X pill would disappear into a dark page.
+[data-ils-scheme="dark"] .ils-share__link--x {
+	--ils-share-bg: #E8EBF0;
+	color: #14171A;
+
+	&:hover,
+	&:focus-visible {
+		color: #14171A;
+	}
+}
+
+.ils-metrics .value {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem;
+	min-height: 2rem;
+}
