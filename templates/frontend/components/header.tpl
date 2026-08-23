@@ -172,12 +172,21 @@
 
 		{if $ilsHasLeft}
 			{capture assign="ilsRail"}{load_menu name="sidebar" id="navigationSidebar" ulClass="ils-rail__list"}{/capture}
-			{if $ilsRail|regex_replace:"/\s+/":""}
+			{assign var="ilsRailHasMenu" value=$ilsRail|regex_replace:"/\s+/":""}
+			{assign var="ilsRailCta" value=($ilsThemeOptions.submissionButton|default:true) && $currentContext}
+			{if $ilsRailHasMenu || $ilsRailCta}
 				<div class="ils-rail" role="complementary" aria-label="{translate key="plugins.themes.ilsAiDriven.journalMenu"}">
-					<nav class="pkp_block ils-rail__block">
-						<h2 class="title">{translate key="plugins.themes.ilsAiDriven.journalMenu"}</h2>
-						{$ilsRail}
-					</nav>
+					{if $ilsRailCta}
+						<a class="ils-button ils-button--accent ils-button--block ils-rail__cta" href="{url page="about" op="submissions"}">
+							{translate key="about.submissions"}
+						</a>
+					{/if}
+					{if $ilsRailHasMenu}
+						<nav class="pkp_block ils-rail__block">
+							<h2 class="title">{translate key="plugins.themes.ilsAiDriven.journalMenu"}</h2>
+							{$ilsRail}
+						</nav>
+					{/if}
 				</div>
 			{/if}
 		{/if}

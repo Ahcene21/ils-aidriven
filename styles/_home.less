@@ -317,3 +317,115 @@
 		border-bottom: 2px solid var(--ils-border);
 	}
 }
+
+// --- Journal profile ---------------------------------------------------------
+//
+// The default homepage opening: the cover beside the description, rather than a
+// large type banner. Denser, and closer to how a reader meets a journal.
+
+.ils-profile {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 1.75rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2.25rem;
+	border-bottom: 1px solid var(--ils-border);
+}
+
+.ils-profile__cover {
+	flex: 0 0 11rem;
+	max-width: 42%;
+
+	img {
+		display: block;
+		width: 100%;
+		border: 1px solid var(--ils-border);
+		border-radius: var(--ils-radius-sm);
+		box-shadow: var(--ils-shadow-md);
+		background: var(--ils-surface-sunken);
+	}
+}
+
+.ils-profile__body {
+	flex: 1 1 20rem;
+	min-width: 0;
+}
+
+.ils-profile__title {
+	font-size: ~"clamp(1.5rem, 1.2rem + 1.4vw, 2.15rem)";
+	margin-bottom: 0.6rem;
+}
+
+.ils-profile__lead {
+	color: var(--ils-text-muted);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-profile__facts {
+	display: grid;
+	gap: 0.3rem;
+	margin: 1.1rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.15rem 0.75rem;
+		margin: 0;
+		font-size: 0.92rem;
+	}
+
+	.label {
+		flex: 0 0 8.5rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+		padding-top: 0.2rem;
+	}
+
+	.value {
+		flex: 1 1 12rem;
+		color: var(--ils-text);
+		font-weight: 600;
+	}
+}
+
+.ils-profile__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-top: 1.35rem;
+}
+
+@media (max-width: 559px) {
+	.ils-profile__cover {
+		flex-basis: 8rem;
+	}
+}
+
+// --- Index and partner logos -------------------------------------------------
+//
+// Journals paste these into "Additional Homepage Content" as a run of images;
+// this lays that paragraph out as a tidy strip instead of a ragged column.
+
+.additional_content p img,
+.ils-logo-strip img {
+	max-height: 4.25rem;
+	width: auto;
+	margin: 0.35rem 0.9rem 0.35rem 0;
+	vertical-align: middle;
+}
+
+.ils-logo-strip {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1.25rem;
+}

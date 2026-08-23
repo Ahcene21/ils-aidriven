@@ -44,8 +44,12 @@ drives the whole palette, in both light and dark mode.
   dark-mode readers never get a white flash.
 - Three masthead layouts, three content widths, three corner styles, three
   typographic pairings and three text sizes — all from Website Settings.
-- Optional magazine homepage: hero, at-a-glance facts strip, announcements,
-  a grid of the latest articles, then the current issue's table of contents.
+- Homepage opens with the journal profile — cover image beside the description,
+  with ISSN, publisher and current issue alongside it — then journal
+  information, announcements, latest articles and the current issue's table of
+  contents. A magazine variant with a full hero banner is one option away.
+- Section headings are filled bars in the journal's own colour, so a dense
+  homepage stays scannable.
 
 **Reading**
 
@@ -132,7 +136,8 @@ All options live under **Website Settings → Appearance** once the theme is act
 | Content width | Wide | Narrow 1080px, Wide 1280px, Extra wide 1600px |
 | Corner style | Softly rounded | Square, soft (8px), round (18px) |
 | Masthead layout | Classic | Classic, centred, compact |
-| Homepage layout | Magazine | Magazine or classic |
+| Homepage layout | Journal profile | Profile, magazine or classic |
+| Submission call to action | On | "Make a Submission" button atop the left rail |
 | Default colour scheme | Match device | Always light, match device, always dark |
 | Colour scheme toggle | On | Masthead light/dark button |
 | Sticky masthead | On | |
@@ -208,6 +213,11 @@ file is parsed, so you never have to edit the file to change a configured value.
 **Add your own CSS.** Add a stylesheet under
 **Website Settings → Appearance → Advanced**, or add an `@import` at the end of
 `styles/index.less`.
+
+**Show your indexing logos.** Paste them into Website Settings → Appearance →
+Additional Homepage Content as a single paragraph of images; the theme lays that
+paragraph out as an even strip. The class `ils-logo-strip` on a wrapper does the
+same thing anywhere else.
 
 **Fill the left rail.** Website Settings → Navigation → create a menu, assign it
 to the **sidebar** area. Nested items are indented rather than turned into

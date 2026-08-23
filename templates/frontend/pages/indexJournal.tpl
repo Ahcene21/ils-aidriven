@@ -17,13 +17,64 @@
 {if !$ilsLead && $currentContext}
 	{assign var="ilsLead" value=$currentContext->getLocalizedData('description')}
 {/if}
-{assign var="ilsLayout" value=$ilsThemeOptions.homepageLayout|default:"magazine"}
+{assign var="ilsLayout" value=$ilsThemeOptions.homepageLayout|default:"profile"}
 
 <div class="page_index_journal">
 
 	{call_hook name="Templates::Index::journal"}
 
-	{if $ilsLayout == 'magazine'}
+	{if $ilsLayout == 'profile'}
+		{* Journal profile: the cover sits beside the description, which is how a
+		   reader scanning a scholarly journal's front page expects to meet it. *}
+		<section class="ils-profile" aria-labelledby="ils-profile-title">
+			{if $homepageImage && $homepageImage.uploadName}
+				<div class="ils-profile__cover">
+					<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape|default:""}">
+				</div>
+			{elseif $issue && $issue->getLocalizedCoverImageUrl()}
+				<div class="ils-profile__cover">
+					<a href="{url page="issue" op="current"}">
+						<img src="{$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:""}">
+					</a>
+				</div>
+			{/if}
+
+			<div class="ils-profile__body">
+				<h1 class="ils-profile__title" id="ils-profile-title">{$displayPageHeaderTitle|escape}</h1>
+
+				{if $ilsLead}
+					<div class="ils-profile__lead">{$ilsLead}</div>
+				{/if}
+
+				{if $currentContext}
+					{assign var="ilsIssn" value=$currentContext->getData('onlineIssn')}
+					{if !$ilsIssn}{assign var="ilsIssn" value=$currentContext->getData('printIssn')}{/if}
+					{assign var="ilsPublisher" value=$currentContext->getData('publisherInstitution')}
+					{if $ilsIssn || $ilsPublisher || $issue}
+						<ul class="ils-profile__facts">
+							{if $issue}
+								<li><span class="label">{translate key="journal.currentIssue"}</span><span class="value">{$issue->getIssueIdentification()|strip_tags|escape}</span></li>
+							{/if}
+							{if $ilsIssn}
+								<li><span class="label">ISSN</span><span class="value">{$ilsIssn|escape}</span></li>
+							{/if}
+							{if $ilsPublisher}
+								<li><span class="label">{translate key="manager.setup.publisher"}</span><span class="value">{$ilsPublisher|escape}</span></li>
+							{/if}
+						</ul>
+					{/if}
+				{/if}
+
+				<div class="ils-profile__actions">
+					<a class="ils-button ils-button--accent" href="{url page="about" op="submissions"}">{translate key="about.submissions"}</a>
+					{if $issue}
+						<a class="ils-button ils-button--secondary" href="{url page="issue" op="current"}">{translate key="journal.currentIssue"}</a>
+					{/if}
+					<a class="ils-button ils-button--secondary" href="{url page="issue" op="archive"}">{translate key="navigation.archives"}</a>
+				</div>
+			</div>
+		</section>
+	{elseif $ilsLayout == 'magazine'}
 		<section class="ils-hero{if !$homepageImage && !$issue} ils-hero--no-figure{/if}" aria-labelledby="ils-hero-title">
 			<div class="ils-hero__inner">
 				<div class="ils-hero__body">

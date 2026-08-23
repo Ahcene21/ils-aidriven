@@ -242,10 +242,20 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
             'label' => __('plugins.themes.ilsAiDriven.option.homepageLayout.label'),
             'description' => __('plugins.themes.ilsAiDriven.option.homepageLayout.description'),
             'options' => [
+                ['value' => 'profile', 'label' => __('plugins.themes.ilsAiDriven.option.homepageLayout.profile')],
                 ['value' => 'magazine', 'label' => __('plugins.themes.ilsAiDriven.option.homepageLayout.magazine')],
                 ['value' => 'classic', 'label' => __('plugins.themes.ilsAiDriven.option.homepageLayout.classic')],
             ],
-            'default' => 'magazine',
+            'default' => 'profile',
+        ]);
+
+        $this->addOption('submissionButton', 'FieldOptions', [
+            'label' => __('plugins.themes.ilsAiDriven.option.submissionButton.label'),
+            'description' => __('plugins.themes.ilsAiDriven.option.submissionButton.description'),
+            'options' => [
+                ['value' => true, 'label' => __('plugins.themes.ilsAiDriven.option.submissionButton.enable')],
+            ],
+            'default' => true,
         ]);
 
         $this->addOption('colourScheme', 'FieldOptions', [
@@ -423,6 +433,7 @@ class IlsAiDrivenThemePlugin extends ThemePlugin
                 'showAbstractInList' => (bool) $this->getOption('showAbstractInList'),
                 'citationBadge' => $this->getOption('citationBadge') ?: 'none',
                 'focusMode' => (bool) $this->getOption('focusMode'),
+                'submissionButton' => (bool) $this->getOption('submissionButton'),
             ],
         ]);
 

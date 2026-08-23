@@ -7,6 +7,11 @@
 // better on a phone than a long vertical list of links.
 // -----------------------------------------------------------------------------
 
+.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
 .ils-rail__block {
 	.ils-card();
 	padding: 1.15rem 1.25rem;
@@ -48,7 +53,12 @@
 
 // Vertical list at the three-column breakpoint.
 @media (min-width: 1240px) {
-	.ils-rail__block {
+	.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.ils-rail__block {
 		li + li {
 			border-top: 1px solid var(--ils-border);
 		}
@@ -75,7 +85,12 @@
 
 // Horizontal chips everywhere else.
 @media (max-width: 1239px) {
-	.ils-rail__block {
+	.ils-rail__cta {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.ils-rail__block {
 		> ul {
 			display: flex;
 			flex-wrap: wrap;

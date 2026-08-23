@@ -4,6 +4,29 @@ All notable changes to this theme are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 the four-part release numbering that OJS plugins require.
 
+## 1.2.0.0 — 2026-08-23
+
+Homepage moved closer to the layout conventions of commercial OJS journal
+themes. Built from Novelty's documented feature list rather than its design —
+the demo site is not reachable from here.
+
+### Added
+
+- "Journal profile" homepage layout, now the default: the cover image sits
+  beside the journal description with ISSN, publisher and current issue listed
+  alongside, rather than opening on a large type banner. The previous hero
+  layout remains available as "magazine".
+- Optional "Make a Submission" button at the top of the left rail. The rail now
+  appears for this button even when no menu is assigned to the sidebar area.
+- Layout for a run of index and partner logos pasted into Additional Homepage
+  Content, plus an `ils-logo-strip` class for the same effect elsewhere.
+
+### Changed
+
+- Section headings are filled bars in the journal's primary colour; issue
+  table-of-contents section headings use a lighter accent-edged variant.
+- Tighter vertical rhythm between homepage sections.
+
 ## 1.1.0.0 — 2026-08-23
 
 Reshapes the theme along the lines of a classic three-column scholarly journal

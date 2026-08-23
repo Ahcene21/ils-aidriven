@@ -110,7 +110,10 @@ msgid "plugins.themes.ilsAiDriven.option.homepageLayout.label"
 msgstr "Homepage layout"
 
 msgid "plugins.themes.ilsAiDriven.option.homepageLayout.description"
-msgstr "The magazine layout adds a hero banner and an at-a-glance facts strip above the current issue."
+msgstr ""
+"Journal profile opens with the cover image beside the journal description. "
+"Magazine opens with a large banner and a facts strip. Classic is a plain "
+"heading and description."
 
 msgid "plugins.themes.ilsAiDriven.option.homepageLayout.magazine"
 msgstr "Magazine"
@@ -421,3 +424,20 @@ msgstr "Metrics"
 
 msgid "plugins.themes.ilsAiDriven.enlargeCover"
 msgstr "Enlarge cover image"
+
+# --- Homepage layout --------------------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.option.homepageLayout.profile"
+msgstr "Journal profile: cover beside the description, then the issue"
+
+msgid "plugins.themes.ilsAiDriven.option.submissionButton.label"
+msgstr "Submission call to action"
+
+msgid "plugins.themes.ilsAiDriven.option.submissionButton.description"
+msgstr ""
+"Puts a \"Make a Submission\" button at the top of the left rail on every "
+"page. The rail appears for this button even when no menu is assigned to the "
+"sidebar area."
+
+msgid "plugins.themes.ilsAiDriven.option.submissionButton.enable"
+msgstr "Show a submission button in the left rail"
