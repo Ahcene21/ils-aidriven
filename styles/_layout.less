@@ -1,0 +1,141 @@
+// -----------------------------------------------------------------------------
+// Page scaffolding
+// -----------------------------------------------------------------------------
+
+.ils-page,
+.pkp_structure_page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+// Flexbox rather than grid so that the sidebar column simply disappears when no
+// block plugin has rendered anything into it.
+.ils-content,
+.pkp_structure_content {
+	.ils-container();
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 2.5rem;
+	flex: 1 0 auto;
+	padding-top: 2.5rem;
+	padding-bottom: 4rem;
+}
+
+.ils-main,
+.pkp_structure_main {
+	flex: 1 1 32rem;
+	min-width: 0;
+}
+
+.ils-sidebar {
+	flex: 0 1 20rem;
+	min-width: 0;
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.ils-sidebar {
+		position: sticky;
+		top: ~"calc(var(--ils-header-height) + 1.5rem)";
+	}
+}
+
+// Full-bleed sections escape the container padding without a wrapper element.
+.ils-bleed {
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+.ils-section {
+	margin: 0 0 3.5rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-section__head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.75rem 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 2px solid var(--ils-border);
+}
+
+.ils-section__title {
+	margin: 0;
+	font-size: 1.4rem;
+}
+
+.ils-section__link {
+	font-family: var(--ils-font-body);
+	font-size: 0.9rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.ils-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
+
+.ils-stack > * + * {
+	margin-top: 1.25rem;
+}
+
+// Reading progress indicator, fixed to the very top of the viewport.
+.ils-progress {
+	position: fixed;
+	inset: 0 0 auto 0;
+	height: 3px;
+	z-index: 120;
+	background: transparent;
+	pointer-events: none;
+}
+
+.ils-progress__bar {
+	height: 100%;
+	width: 0;
+	background: linear-gradient(90deg, var(--ils-primary), var(--ils-accent));
+	transition: width 80ms linear;
+}
+
+.ils-to-top {
+	position: fixed;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	z-index: 110;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.85rem;
+	height: 2.85rem;
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius-pill);
+	background: var(--ils-surface);
+	color: var(--ils-text);
+	box-shadow: var(--ils-shadow-md);
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(0.5rem);
+	transition: opacity var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease), visibility var(--ils-speed);
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+
+	&:hover {
+		border-color: var(--ils-primary);
+		color: var(--ils-primary);
+	}
+}

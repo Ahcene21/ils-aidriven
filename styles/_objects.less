@@ -1,0 +1,340 @@
+// -----------------------------------------------------------------------------
+// OJS content objects
+//
+// These class names come from core templates, so styling them here means the
+// theme keeps working for every plugin that reuses the same markup.
+// -----------------------------------------------------------------------------
+
+// --- Galley links ------------------------------------------------------------
+
+.galleys_links,
+.galleys {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin: 0;
+	}
+}
+
+.obj_galley_link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.35rem 0.8rem;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--ils-primary);
+	background: var(--ils-primary-softer);
+	border: 1px solid var(--ils-primary-soft);
+	border-radius: var(--ils-radius-sm);
+	transition: background var(--ils-speed) var(--ils-ease), color var(--ils-speed) var(--ils-ease);
+
+	&::before {
+		content: "";
+		width: 0.9rem;
+		height: 0.9rem;
+		background: currentColor;
+		// Document glyph, inlined so no extra request is made.
+		mask-image: ~"url(data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M14%202H6a2%202%200%200%200-2%202v16a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V8l-6-6zm0%202%204%204h-4V4z'/%3E%3C/svg%3E)";
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		-webkit-mask-image: ~"url(data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M14%202H6a2%202%200%200%200-2%202v16a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V8l-6-6zm0%202%204%204h-4V4z'/%3E%3C/svg%3E)";
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		flex: none;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: var(--ils-primary-contrast);
+		background: var(--ils-primary);
+		border-color: var(--ils-primary);
+	}
+
+	&.pdf {
+		color: var(--ils-danger);
+		background: fade(#B91C1C, 8%);
+		border-color: fade(#B91C1C, 22%);
+
+		&:hover,
+		&:focus-visible {
+			color: #fff;
+			background: var(--ils-danger);
+			border-color: var(--ils-danger);
+		}
+	}
+
+	.label {
+		display: inline;
+	}
+}
+
+// --- Article summary (issue TOC, search results, homepage lists) -------------
+
+.cmp_article_list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+		padding: 1.35rem 0;
+		border-bottom: 1px solid var(--ils-border);
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+.obj_article_summary {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.title {
+		.ils-heading();
+		margin: 0;
+		font-size: 1.15rem;
+		line-height: 1.35;
+
+		a {
+			color: var(--ils-heading);
+			text-decoration: none;
+			background-image: linear-gradient(var(--ils-primary), var(--ils-primary));
+			background-size: 0 2px;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+			transition: background-size var(--ils-speed) var(--ils-ease), color var(--ils-speed) var(--ils-ease);
+
+			&:hover,
+			&:focus-visible {
+				color: var(--ils-primary);
+				background-size: 100% 2px;
+			}
+		}
+	}
+
+	.subtitle {
+		display: block;
+		font-size: 0.92em;
+		font-weight: 400;
+		color: var(--ils-text-muted);
+	}
+
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.35rem 1rem;
+		font-size: 0.88rem;
+		color: var(--ils-text-muted);
+	}
+
+	.authors {
+		font-weight: 600;
+		color: var(--ils-text);
+	}
+
+	.published,
+	.pages {
+		white-space: nowrap;
+	}
+
+	.summary {
+		font-size: 0.94rem;
+		color: var(--ils-text-muted);
+		.ils-line-clamp(3);
+	}
+
+	.cover_image img {
+		border-radius: var(--ils-radius-sm);
+	}
+}
+
+// --- Issue table of contents -------------------------------------------------
+
+.obj_issue_toc {
+	.heading {
+		display: grid;
+		gap: 1.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.cover_image img {
+		display: block;
+		max-width: 15rem;
+		border-radius: var(--ils-radius);
+		box-shadow: var(--ils-shadow-md);
+	}
+
+	.description {
+		color: var(--ils-text-muted);
+	}
+
+	.published,
+	.pub_id {
+		font-size: 0.9rem;
+		color: var(--ils-text-muted);
+	}
+
+	.section {
+		margin-bottom: 2.75rem;
+
+		> h2,
+		> h3 {
+			font-size: 1.05rem;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--ils-text-muted);
+			padding-bottom: 0.6rem;
+			margin-bottom: 1.25rem;
+			border-bottom: 2px solid var(--ils-border);
+		}
+	}
+
+	.galleys {
+		margin-bottom: 2rem;
+	}
+}
+
+@media (min-width: 700px) {
+	.obj_issue_toc .heading {
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: start;
+	}
+}
+
+// --- Issue summary (archive listing) ----------------------------------------
+
+.issues_archive {
+	display: grid;
+	gap: 1.75rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.obj_issue_summary {
+	.ils-card();
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.15rem;
+	height: 100%;
+	transition: box-shadow var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease);
+
+	&:hover {
+		box-shadow: var(--ils-shadow-md);
+		transform: translateY(-2px);
+	}
+
+	.cover img {
+		display: block;
+		width: 100%;
+		border-radius: var(--ils-radius-sm);
+		margin-bottom: 0.75rem;
+	}
+
+	.title {
+		.ils-heading();
+		font-size: 1.02rem;
+		margin: 0;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				color: var(--ils-primary);
+			}
+		}
+	}
+
+	.series,
+	.description {
+		font-size: 0.88rem;
+		color: var(--ils-text-muted);
+	}
+}
+
+// --- Announcements -----------------------------------------------------------
+
+.obj_announcement_summary {
+	.ils-card();
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.25rem;
+	border-inline-start: 4px solid var(--ils-accent);
+
+	.date {
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--ils-accent);
+	}
+
+	.title {
+		.ils-heading();
+		margin: 0;
+		font-size: 1.1rem;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				color: var(--ils-primary);
+			}
+		}
+	}
+
+	.summary {
+		color: var(--ils-text-muted);
+		font-size: 0.94rem;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.obj_announcement_details {
+	.date {
+		font-size: 0.9rem;
+		color: var(--ils-text-muted);
+		margin-bottom: 1rem;
+	}
+
+	.description {
+		max-width: var(--ils-reading-max);
+	}
+}
+
+// --- Editorial team / static content pages -----------------------------------
+
+.page_editorial_team,
+.page_about,
+.cmp_page_content {
+	max-width: var(--ils-reading-max);
+}

@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// Right-to-left support
+//
+// Most spacing already uses logical properties; these rules cover the few
+// places where a physical direction is unavoidable.
+// -----------------------------------------------------------------------------
+
+[dir="rtl"] {
+	.ils-search__submit {
+		right: auto;
+		left: 0.2rem;
+	}
+
+	.ils-to-top {
+		right: auto;
+		left: 1.25rem;
+	}
+
+	blockquote {
+		border-left: 0;
+		border-right: 3px solid var(--ils-accent);
+		padding-left: 0;
+		padding-right: 1.25rem;
+	}
+
+	th,
+	td,
+	caption {
+		text-align: right;
+	}
+
+	.obj_article_details .item.references p {
+		text-indent: 0;
+		padding-inline-start: 0;
+	}
+
+	.pkp_helpers_align_left { float: right; }
+	.pkp_helpers_align_right { float: left; }
+	.pkp_helpers_text_left { text-align: right; }
+	.pkp_helpers_text_right { text-align: left; }
+}

@@ -1,0 +1,87 @@
+// -----------------------------------------------------------------------------
+// Print
+// -----------------------------------------------------------------------------
+
+@media print {
+	:root {
+		--ils-bg: #ffffff;
+		--ils-surface: #ffffff;
+		--ils-text: #000000;
+		--ils-heading: #000000;
+		--ils-text-muted: #333333;
+		--ils-border: #cccccc;
+	}
+
+	body {
+		background: #ffffff;
+		color: #000000;
+		font-size: 11pt;
+	}
+
+	.ils-header__nav,
+	.ils-header__actions,
+	.ils-announcement-bar,
+	.ils-to-top,
+	.ils-progress,
+	.ils-sidebar,
+	.ils-outline,
+	.ils-article-toolbar,
+	.ils-footer__links,
+	.cmp_pagination,
+	.obj_galley_link {
+		display: none !important;
+	}
+
+	.ils-header {
+		position: static;
+		border-bottom: 1pt solid #000000;
+	}
+
+	.ils-header__masthead,
+	.ils-footer {
+		background: none !important;
+		color: #000000 !important;
+	}
+
+	.ils-content,
+	.pkp_structure_content {
+		display: block;
+		padding: 0;
+		max-width: none;
+	}
+
+	.obj_article_details .row {
+		display: block;
+	}
+
+	.obj_article_details .entry_details {
+		position: static;
+		max-height: none;
+		border: 0;
+		padding: 0;
+		margin-top: 1.5rem;
+	}
+
+	a {
+		color: #000000;
+		text-decoration: underline;
+	}
+
+	// Reveal destinations for links that leave the document.
+	.main_entry a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 9pt;
+		word-break: break-all;
+	}
+
+	h1, h2, h3, h4 {
+		page-break-after: avoid;
+	}
+
+	img,
+	table,
+	figure,
+	blockquote {
+		page-break-inside: avoid;
+	}
+}

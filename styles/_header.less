@@ -1,0 +1,252 @@
+// -----------------------------------------------------------------------------
+// Masthead
+// -----------------------------------------------------------------------------
+
+.ils-announcement-bar {
+	background: var(--ils-accent);
+	color: var(--ils-accent-contrast);
+	font-size: 0.92rem;
+	text-align: center;
+	padding: 0.6rem var(--ils-gutter);
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+	}
+}
+
+.ils-header {
+	position: relative;
+	z-index: 100;
+	background: var(--ils-header-bg);
+	color: var(--ils-header-text);
+	border-bottom: 1px solid var(--ils-border);
+
+	&[data-sticky="true"] {
+		position: sticky;
+		top: 0;
+	}
+
+	&.is-pinned {
+		box-shadow: var(--ils-shadow-md);
+	}
+}
+
+.ils-header__masthead {
+	background: var(--ils-masthead-bg);
+	color: var(--ils-masthead-text);
+}
+
+.ils-header__masthead-inner {
+	.ils-container();
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem 1.5rem;
+	padding-top: 1.15rem;
+	padding-bottom: 1.15rem;
+	transition: padding var(--ils-speed) var(--ils-ease);
+}
+
+// Collapsed masthead once the reader scrolls past the hero.
+.ils-header.is-pinned .ils-header__masthead-inner {
+	padding-top: 0.55rem;
+	padding-bottom: 0.55rem;
+}
+
+.ils-brand {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	min-width: 0;
+}
+
+.ils-brand__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.9rem;
+	color: inherit;
+	text-decoration: none;
+	min-width: 0;
+}
+
+.ils-brand__logo {
+	display: block;
+	max-height: 3.25rem;
+	width: auto;
+	transition: max-height var(--ils-speed) var(--ils-ease);
+}
+
+.ils-header.is-pinned .ils-brand__logo {
+	max-height: 2.25rem;
+}
+
+.ils-brand__text {
+	min-width: 0;
+}
+
+.ils-brand__title {
+	display: block;
+	font-family: var(--ils-font-heading);
+	font-size: ~"clamp(1.15rem, 0.95rem + 0.7vw, 1.6rem)";
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.012em;
+}
+
+.ils-brand__tagline {
+	display: block;
+	margin-top: 0.15rem;
+	font-size: 0.85rem;
+	opacity: 0.82;
+	.ils-line-clamp(1);
+}
+
+.ils-header.is-pinned .ils-brand__tagline {
+	display: none;
+}
+
+.ils-header__actions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+}
+
+// --- Header search -----------------------------------------------------------
+
+.ils-search {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.ils-search__field {
+	width: 100%;
+	min-width: 0;
+	padding: 0.5rem 2.4rem 0.5rem 0.85rem;
+	font: inherit;
+	font-size: 0.92rem;
+	color: inherit;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: var(--ils-radius-pill);
+	transition: background var(--ils-speed) var(--ils-ease), border-color var(--ils-speed) var(--ils-ease);
+
+	&::placeholder {
+		color: inherit;
+		opacity: 0.7;
+	}
+
+	&:focus {
+		background: var(--ils-surface);
+		color: var(--ils-text);
+		border-color: var(--ils-surface);
+	}
+}
+
+.ils-search__submit {
+	position: absolute;
+	right: 0.2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	padding: 0;
+	color: inherit;
+	background: none;
+	border: 0;
+	border-radius: var(--ils-radius-pill);
+	cursor: pointer;
+
+	.ils-search__field:focus ~ & {
+		color: var(--ils-text);
+	}
+}
+
+@media (max-width: 767px) {
+	.ils-search {
+		order: 3;
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.ils-search__field {
+		width: 13rem;
+
+		&:focus {
+			width: 17rem;
+		}
+	}
+}
+
+// --- Icon buttons in the masthead -------------------------------------------
+
+.ils-icon-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+	min-width: 2.4rem;
+	height: 2.4rem;
+	padding: 0 0.6rem;
+	font: inherit;
+	font-size: 0.9rem;
+	color: inherit;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	border-radius: var(--ils-radius-pill);
+	cursor: pointer;
+	transition: background var(--ils-speed) var(--ils-ease);
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.24);
+	}
+
+	svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: currentColor;
+	}
+}
+
+// The toggle swaps which glyph is shown based on the active scheme.
+.ils-scheme-toggle__sun { display: none; }
+
+[data-ils-scheme="dark"] {
+	.ils-scheme-toggle__sun { display: block; }
+	.ils-scheme-toggle__moon { display: none; }
+}
+
+// --- Header layout variants --------------------------------------------------
+
+.ils-header--centered {
+	.ils-header__masthead-inner {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.ils-brand,
+	.ils-brand__link {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.ils-primary-nav > ul {
+		justify-content: center;
+	}
+}
+
+.ils-header--compact {
+	.ils-header__masthead-inner {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+	}
+
+	.ils-brand__tagline {
+		display: none;
+	}
+}

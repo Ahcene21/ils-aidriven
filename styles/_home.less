@@ -1,0 +1,243 @@
+// -----------------------------------------------------------------------------
+// Journal homepage
+// -----------------------------------------------------------------------------
+
+.ils-hero {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 2.5rem;
+	padding: 2.25rem;
+	background: var(--ils-surface-alt);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+}
+
+.ils-hero__inner {
+	display: grid;
+	gap: 2rem;
+	align-items: center;
+}
+
+.ils-hero__title {
+	font-size: ~"clamp(1.8rem, 1.3rem + 2.2vw, 2.75rem)";
+	margin-bottom: 0.75rem;
+}
+
+.ils-hero__lead {
+	max-width: 40rem;
+	font-size: 1.05rem;
+	color: var(--ils-text-muted);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ils-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.75rem;
+}
+
+.ils-hero__figure {
+	margin: 0;
+
+	img {
+		display: block;
+		width: 100%;
+		border-radius: var(--ils-radius);
+		box-shadow: var(--ils-shadow-lg);
+	}
+}
+
+@media (max-width: 599px) {
+	.ils-hero {
+		padding: 1.5rem;
+	}
+}
+
+@media (min-width: 860px) {
+	.ils-hero {
+		padding: 3rem;
+	}
+
+	.ils-hero__inner {
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+	}
+
+	.ils-hero--no-figure .ils-hero__inner {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.ils-hero__figure img {
+		max-height: 22rem;
+		width: auto;
+		margin-inline-start: auto;
+	}
+}
+
+.ils-page-title {
+	margin-bottom: 1.25rem;
+}
+
+// --- Key facts strip ---------------------------------------------------------
+
+.ils-facts {
+	display: grid;
+	gap: 1px;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+	margin-bottom: 3rem;
+	background: var(--ils-border);
+	border: 1px solid var(--ils-border);
+	border-radius: var(--ils-radius);
+	overflow: hidden;
+}
+
+.ils-fact {
+	padding: 1.1rem 1.25rem;
+	background: var(--ils-surface);
+	text-align: center;
+
+	&__label {
+		display: block;
+		font-size: 0.74rem;
+		font-weight: 700;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--ils-text-muted);
+	}
+
+	&__value {
+		display: block;
+		margin-top: 0.2rem;
+		font-family: var(--ils-font-heading);
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: var(--ils-heading);
+		word-break: break-word;
+	}
+}
+
+// --- Homepage sections -------------------------------------------------------
+
+.page_index_journal {
+	> .ils-section:first-child {
+		margin-top: 0;
+	}
+}
+
+.ils-announcement-list {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.ils-latest-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		margin: 0;
+	}
+}
+
+.ils-latest-card {
+	.ils-card();
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+	height: 100%;
+	padding: 1.25rem;
+	transition: box-shadow var(--ils-speed) var(--ils-ease), transform var(--ils-speed) var(--ils-ease);
+
+	&:hover {
+		box-shadow: var(--ils-shadow-md);
+		transform: translateY(-2px);
+	}
+
+	&__section {
+		font-size: 0.74rem;
+		font-weight: 700;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--ils-accent);
+	}
+
+	&__title {
+		.ils-heading();
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.35;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			// Whole card becomes the hit area.
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+
+			&:hover {
+				color: var(--ils-primary);
+			}
+		}
+	}
+
+	&__authors {
+		font-size: 0.88rem;
+		color: var(--ils-text-muted);
+	}
+
+	&__footer {
+		margin-top: auto;
+		padding-top: 0.75rem;
+		font-size: 0.82rem;
+		color: var(--ils-text-muted);
+	}
+}
+
+.ils-latest-grid > li {
+	position: relative;
+}
+
+// --- Additional home content -------------------------------------------------
+
+.additional_content,
+.homepage_about {
+	max-width: var(--ils-reading-max);
+	margin-top: 2.5rem;
+}
+
+// --- Site index (multi-journal installs) ------------------------------------
+
+.page_index_site {
+	.journals ul {
+		display: grid;
+		gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.journals li {
+		.ils-card();
+		margin: 0;
+		padding: 1.25rem;
+	}
+}

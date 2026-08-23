@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// Reset and document defaults
+// -----------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: var(--ils-font-size);
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+	// Keep anchor targets clear of the sticky masthead.
+	scroll-padding-top: ~"calc(var(--ils-header-height) + 1.5rem)";
+}
+
+body {
+	margin: 0;
+	background: var(--ils-bg);
+	color: var(--ils-text);
+	font-family: var(--ils-font-body);
+	font-size: 1rem;
+	line-height: var(--ils-line-height);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-wrap: break-word;
+}
+
+::selection {
+	background: var(--ils-selection);
+	color: var(--ils-text);
+}
+
+img,
+svg,
+video,
+iframe {
+	max-width: 100%;
+}
+
+img,
+svg,
+video {
+	height: auto;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid var(--ils-border);
+	margin: 2rem 0;
+}
+
+// A single, consistent focus treatment across core OJS markup and theme markup.
+:focus-visible {
+	.ils-focus-ring();
+}
+
+// Older engines without :focus-visible still get a visible ring.
+.no-focus-visible :focus {
+	.ils-focus-ring();
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.ils-visually-hidden {
+	.ils-visually-hidden();
+}
+
+// Skip link: hidden until focused, then pinned to the top-left of the viewport.
+.ils-skip-link {
+	.ils-visually-hidden();
+
+	&:focus {
+		position: fixed;
+		top: 0.5rem;
+		left: 0.5rem;
+		z-index: 200;
+		width: auto;
+		height: auto;
+		clip: auto;
+		margin: 0;
+		padding: 0.75rem 1.25rem;
+		background: var(--ils-surface);
+		color: var(--ils-link);
+		border-radius: var(--ils-radius-sm);
+		box-shadow: var(--ils-shadow-lg);
+		font-weight: 600;
+	}
+}
+
+.ils-container {
+	.ils-container();
+}

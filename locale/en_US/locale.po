@@ -1,0 +1,271 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ILS AI-Driven theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "plugins.themes.ilsAiDriven.name"
+msgstr "ILS AI-Driven Theme"
+
+msgid "plugins.themes.ilsAiDriven.description"
+msgstr ""
+"A configurable, accessible and reading-first theme for scholarly journals. "
+"Provides a light and dark colour scheme, a sticky masthead with search, an "
+"article outline, reading progress, Schema.org structured data and a "
+"magazine-style homepage."
+
+# --- Appearance options ------------------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.option.primaryColour.label"
+msgstr "Primary colour"
+
+msgid "plugins.themes.ilsAiDriven.option.primaryColour.description"
+msgstr ""
+"The journal's brand colour. It is used for the masthead, links and buttons, "
+"and the neutral greys are tinted towards it so the palette stays coherent."
+
+msgid "plugins.themes.ilsAiDriven.option.accentColour.label"
+msgstr "Accent colour"
+
+msgid "plugins.themes.ilsAiDriven.option.accentColour.description"
+msgstr ""
+"Used sparingly for highlights, announcement badges and the keyboard focus "
+"outline. Pick something with strong contrast against the primary colour."
+
+msgid "plugins.themes.ilsAiDriven.option.typography.label"
+msgstr "Typography"
+
+msgid "plugins.themes.ilsAiDriven.option.typography.description"
+msgstr "Choose the pairing of heading and body typefaces."
+
+msgid "plugins.themes.ilsAiDriven.option.typography.sans"
+msgstr "Sans serif headings and body"
+
+msgid "plugins.themes.ilsAiDriven.option.typography.serif"
+msgstr "Serif headings and body"
+
+msgid "plugins.themes.ilsAiDriven.option.typography.hybrid"
+msgstr "Serif headings, sans serif body"
+
+msgid "plugins.themes.ilsAiDriven.option.baseFontSize.label"
+msgstr "Base text size"
+
+msgid "plugins.themes.ilsAiDriven.option.baseFontSize.description"
+msgstr "Sets the size everything else scales from."
+
+msgid "plugins.themes.ilsAiDriven.option.baseFontSize.compact"
+msgstr "Compact"
+
+msgid "plugins.themes.ilsAiDriven.option.baseFontSize.regular"
+msgstr "Regular"
+
+msgid "plugins.themes.ilsAiDriven.option.baseFontSize.large"
+msgstr "Large"
+
+msgid "plugins.themes.ilsAiDriven.option.containerWidth.label"
+msgstr "Content width"
+
+msgid "plugins.themes.ilsAiDriven.option.containerWidth.description"
+msgstr "The maximum width of the page. Article text keeps its own reading measure regardless of this setting."
+
+msgid "plugins.themes.ilsAiDriven.option.containerWidth.narrow"
+msgstr "Narrow"
+
+msgid "plugins.themes.ilsAiDriven.option.containerWidth.wide"
+msgstr "Wide"
+
+msgid "plugins.themes.ilsAiDriven.option.containerWidth.fluid"
+msgstr "Extra wide"
+
+msgid "plugins.themes.ilsAiDriven.option.cornerStyle.label"
+msgstr "Corner style"
+
+msgid "plugins.themes.ilsAiDriven.option.cornerStyle.sharp"
+msgstr "Square"
+
+msgid "plugins.themes.ilsAiDriven.option.cornerStyle.soft"
+msgstr "Softly rounded"
+
+msgid "plugins.themes.ilsAiDriven.option.cornerStyle.round"
+msgstr "Strongly rounded"
+
+msgid "plugins.themes.ilsAiDriven.option.headerStyle.label"
+msgstr "Masthead layout"
+
+msgid "plugins.themes.ilsAiDriven.option.headerStyle.description"
+msgstr "How the journal title, search field and navigation are arranged."
+
+msgid "plugins.themes.ilsAiDriven.option.headerStyle.classic"
+msgstr "Classic: title on the left, tools on the right"
+
+msgid "plugins.themes.ilsAiDriven.option.headerStyle.centered"
+msgstr "Centred: title and navigation stacked and centred"
+
+msgid "plugins.themes.ilsAiDriven.option.headerStyle.compact"
+msgstr "Compact: minimal vertical space"
+
+msgid "plugins.themes.ilsAiDriven.option.homepageLayout.label"
+msgstr "Homepage layout"
+
+msgid "plugins.themes.ilsAiDriven.option.homepageLayout.description"
+msgstr "The magazine layout adds a hero banner and an at-a-glance facts strip above the current issue."
+
+msgid "plugins.themes.ilsAiDriven.option.homepageLayout.magazine"
+msgstr "Magazine"
+
+msgid "plugins.themes.ilsAiDriven.option.homepageLayout.classic"
+msgstr "Classic"
+
+msgid "plugins.themes.ilsAiDriven.option.colourScheme.label"
+msgstr "Default colour scheme"
+
+msgid "plugins.themes.ilsAiDriven.option.colourScheme.description"
+msgstr ""
+"The scheme a reader sees on their first visit. Once they use the toggle, "
+"their choice is remembered in their browser."
+
+msgid "plugins.themes.ilsAiDriven.option.colourScheme.light"
+msgstr "Always light"
+
+msgid "plugins.themes.ilsAiDriven.option.colourScheme.auto"
+msgstr "Match the reader's device setting"
+
+msgid "plugins.themes.ilsAiDriven.option.colourScheme.dark"
+msgstr "Always dark"
+
+msgid "plugins.themes.ilsAiDriven.option.showThemeToggle.label"
+msgstr "Colour scheme toggle"
+
+msgid "plugins.themes.ilsAiDriven.option.showThemeToggle.enable"
+msgstr "Show a light/dark toggle in the masthead"
+
+msgid "plugins.themes.ilsAiDriven.option.stickyHeader.label"
+msgstr "Sticky masthead"
+
+msgid "plugins.themes.ilsAiDriven.option.stickyHeader.enable"
+msgstr "Keep the masthead visible while the reader scrolls"
+
+msgid "plugins.themes.ilsAiDriven.option.showSearchInHeader.label"
+msgstr "Masthead search"
+
+msgid "plugins.themes.ilsAiDriven.option.showSearchInHeader.enable"
+msgstr "Show a search field in the masthead"
+
+msgid "plugins.themes.ilsAiDriven.option.showReadingProgress.label"
+msgstr "Reading progress"
+
+msgid "plugins.themes.ilsAiDriven.option.showReadingProgress.description"
+msgstr "Displays a thin progress bar at the top of article pages."
+
+msgid "plugins.themes.ilsAiDriven.option.showReadingProgress.enable"
+msgstr "Show a reading progress bar on article pages"
+
+msgid "plugins.themes.ilsAiDriven.option.showArticleOutline.label"
+msgstr "Article outline"
+
+msgid "plugins.themes.ilsAiDriven.option.showArticleOutline.description"
+msgstr ""
+"Builds an \"On this page\" list from the headings of an article and "
+"highlights the section currently in view. It appears only when an article "
+"has at least three headings."
+
+msgid "plugins.themes.ilsAiDriven.option.showArticleOutline.enable"
+msgstr "Show an outline beside articles"
+
+msgid "plugins.themes.ilsAiDriven.option.showLatestArticles.label"
+msgstr "Latest articles on the homepage"
+
+msgid "plugins.themes.ilsAiDriven.option.showLatestArticles.description"
+msgstr "Adds a grid of the six most recently published articles to the homepage."
+
+msgid "plugins.themes.ilsAiDriven.option.showLatestArticles.enable"
+msgstr "Show recently published articles"
+
+msgid "plugins.themes.ilsAiDriven.option.structuredData.label"
+msgstr "Structured data"
+
+msgid "plugins.themes.ilsAiDriven.option.structuredData.description"
+msgstr ""
+"Adds a Schema.org ScholarlyArticle description to article pages, alongside "
+"the Dublin Core and Google Scholar tags that OJS already provides."
+
+msgid "plugins.themes.ilsAiDriven.option.structuredData.enable"
+msgstr "Emit Schema.org JSON-LD on article pages"
+
+msgid "plugins.themes.ilsAiDriven.option.webFonts.label"
+msgstr "Web fonts"
+
+msgid "plugins.themes.ilsAiDriven.option.webFonts.description"
+msgstr ""
+"Loads Source Sans 3 and Source Serif 4 from Google Fonts. Leave this off to "
+"avoid a third-party request; the theme falls back to high quality system "
+"fonts."
+
+msgid "plugins.themes.ilsAiDriven.option.webFonts.enable"
+msgstr "Load web fonts from Google Fonts"
+
+msgid "plugins.themes.ilsAiDriven.option.announcementBar.label"
+msgstr "Notice bar"
+
+msgid "plugins.themes.ilsAiDriven.option.announcementBar.description"
+msgstr ""
+"Optional plain-text notice shown as a strip above the masthead on every "
+"page. Leave empty to hide it."
+
+# --- Interface ---------------------------------------------------------------
+
+msgid "plugins.themes.ilsAiDriven.menu"
+msgstr "Menu"
+
+msgid "plugins.themes.ilsAiDriven.mainNavigation"
+msgstr "Main navigation"
+
+msgid "plugins.themes.ilsAiDriven.userMenu"
+msgstr "User menu"
+
+msgid "plugins.themes.ilsAiDriven.expandSubmenu"
+msgstr "Show submenu"
+
+msgid "plugins.themes.ilsAiDriven.sidebar"
+msgstr "Sidebar"
+
+msgid "plugins.themes.ilsAiDriven.noticeBar"
+msgstr "Site notice"
+
+msgid "plugins.themes.ilsAiDriven.searchPlaceholder"
+msgstr "Search this journal"
+
+msgid "plugins.themes.ilsAiDriven.toggleColourScheme"
+msgstr "Switch between light and dark mode"
+
+msgid "plugins.themes.ilsAiDriven.readingProgress"
+msgstr "Reading progress"
+
+msgid "plugins.themes.ilsAiDriven.onThisPage"
+msgstr "On this page"
+
+msgid "plugins.themes.ilsAiDriven.backToTop"
+msgstr "Back to top"
+
+msgid "plugins.themes.ilsAiDriven.copyDoi"
+msgstr "Copy DOI"
+
+msgid "plugins.themes.ilsAiDriven.copyCitation"
+msgstr "Copy citation"
+
+msgid "plugins.themes.ilsAiDriven.copied"
+msgstr "Copied"
+
+msgid "plugins.themes.ilsAiDriven.latestArticles"
+msgstr "Latest articles"
+
+msgid "plugins.themes.ilsAiDriven.viewAll"
+msgstr "View all"
+
+msgid "plugins.themes.ilsAiDriven.issnOnline"
+msgstr "ISSN (online): {$issn}"
+
+msgid "plugins.themes.ilsAiDriven.issnPrint"
+msgstr "ISSN (print): {$issn}"

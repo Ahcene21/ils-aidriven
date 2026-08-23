@@ -1,0 +1,6 @@
+# OJS compiles the theme's LESS into its own cache directory; nothing in this
+# repository is generated at build time.
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
