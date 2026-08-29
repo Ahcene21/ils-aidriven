@@ -1,0 +1,29 @@
+/*
+ * Mkadmi — the publication, course, conference and project meta boxes.
+ */
+
+.mkadmi-fields {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: 0 1.25rem;
+}
+
+.mkadmi-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.mkadmi-field label {
+	font-size: 13px;
+}
+
+.mkadmi-field .description {
+	color: #646970;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.mkadmi-field textarea {
+	font-family: inherit;
+}

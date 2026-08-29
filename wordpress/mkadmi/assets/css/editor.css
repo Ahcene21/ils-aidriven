@@ -1,0 +1,42 @@
+/*
+ * Mkadmi — editor styles.
+ *
+ * Enough to make the writing canvas resemble the published page: the same
+ * measure, the same headings, the same link colour.
+ */
+
+.editor-styles-wrapper {
+	background: #fff;
+	color: #22262b;
+	font-family: "Noto Kufi Arabic", "Tajawal", "Cairo", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+	line-height: 1.75;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: 48rem;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+	color: var(--mk-primary, #0e5540);
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.editor-styles-wrapper h2 {
+	padding-bottom: 0.4rem;
+	border-bottom: 2px solid var(--mk-primary-tint-2, #d8e4e0);
+}
+
+.editor-styles-wrapper a {
+	color: var(--mk-primary, #0e5540);
+}
+
+.editor-styles-wrapper blockquote {
+	padding-inline-start: 1rem;
+	border-inline-start: 3px solid var(--mk-accent, #c8912b);
+	color: #5b6470;
+	font-style: italic;
+}

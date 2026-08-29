@@ -1,0 +1,18 @@
+/*
+Theme Name: Mkadmi
+Theme URI: https://www.mkadmi.tn/
+Author: ILS AI-Driven
+Author URI: https://github.com/Ahcene21/ils-aidriven
+Description: An Arabic-first academic personal-site theme, modelled on www.mkadmi.tn. A green and gold masthead carries the language switcher and menu; a profile band pairs the portrait with affiliations, contact details and live clocks for the cities the site's owner works between. Below it sit a figures strip, then research topics, academic news, organised conferences and an illustrated list of books and papers - each a post type with real fields. RTL by construction (built on CSS logical properties, so it reads correctly in Arabic, French and English alike), accessible, and dependency-free: no web fonts, no CDNs, no third-party scripts.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: mkadmi
+Tags: education, blog, two-columns, right-sidebar, left-sidebar, custom-colors, custom-menu, custom-logo, featured-images, translation-ready, rtl-language-support, accessibility-ready
+
+Mkadmi is distributed under the terms of the GNU GPL v3. The theme's stylesheet lives in assets/css/main.css; this file carries the
+theme header only, which is where WordPress reads the metadata above from.
+*/

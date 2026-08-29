@@ -4,3 +4,6 @@
 Thumbs.db
 node_modules/
 *.log
+
+# The packaged theme is built from wordpress/mkadmi/ with `zip -r mkadmi.zip mkadmi`.
+wordpress/*.zip

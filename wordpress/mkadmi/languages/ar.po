@@ -1,0 +1,1068 @@
+# Arabic translation for the Mkadmi theme.
+# Copyright (C) 2026 ILS AI-Driven
+# This file is distributed under the GNU GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mkadmi 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Ahcene21/ils-aidriven/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"X-Domain: mkadmi\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#: 404.php:13
+msgid "This page could not be found"
+msgstr "تعذّر العثور على هذه الصفحة"
+
+#: 404.php:15
+msgid "The address may have changed, or the page may have been removed. Try a search, or start from the homepage."
+msgstr "ربما تغيّر العنوان أو حُذفت الصفحة. جرّب البحث، أو ابدأ من الصفحة الرئيسية."
+
+#: 404.php:21
+msgid "Go to the homepage"
+msgstr "الانتقال إلى الصفحة الرئيسية"
+
+#: archive-mkadmi_publication.php:30
+msgid "Undated"
+msgstr "بدون تاريخ"
+
+#. translators: %s: number of comments.
+#: comments.php:23
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "لا توجد تعليقات"
+msgstr[1] "تعليق واحد"
+msgstr[2] "تعليقان"
+msgstr[3] "%s تعليقات"
+msgstr[4] "%s تعليقًا"
+msgstr[5] "%s تعليق"
+
+#: comments.php:45 single.php:25 inc/template-tags.php:250
+msgid "Previous"
+msgstr "السابق"
+
+#: comments.php:46 single.php:26 inc/template-tags.php:251
+msgid "Next"
+msgstr "التالي"
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: comments.php:60
+msgid "Leave a comment"
+msgstr "أضف تعليقًا"
+
+#: footer.php:28
+msgid "Institutions"
+msgstr "المؤسسات"
+
+#: footer.php:57 inc/customizer.php:374 inc/setup.php:94
+msgid "Footer"
+msgstr "التذييل"
+
+#. translators: 1: year, 2: site name.
+#: footer.php:75
+msgid "© %1$s %2$s"
+msgstr "© %1$s %2$s"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "تخطَّ إلى المحتوى"
+
+#: header.php:33
+msgid "Menu"
+msgstr "القائمة"
+
+#: header.php:44
+msgid "Primary"
+msgstr "الرئيسية"
+
+#. translators: %s: search query.
+#: search.php:17
+msgid "Search results for “%s”"
+msgstr "نتائج البحث عن ”%s“"
+
+#: searchform.php:14
+msgid "Search this site"
+msgstr "ابحث في هذا الموقع"
+
+#: searchform.php:23
+msgid "Search…"
+msgstr "بحث…"
+
+#: searchform.php:26
+msgid "Search"
+msgstr "بحث"
+
+#: sidebar.php:14
+msgid "Site panels"
+msgstr "لوحات الموقع"
+
+#: template-parts/content/none.php:11
+msgid "Nothing found"
+msgstr "لا توجد نتائج"
+
+#: template-parts/content/none.php:14
+msgid "No entry matches that search. Try another wording, or fewer words."
+msgstr "لا يطابق هذا البحث أيّ مُدخل. جرّب صياغة أخرى، أو كلمات أقلّ."
+
+#: template-parts/content/none.php:16
+msgid "There is nothing here yet."
+msgstr "لا يوجد شيء هنا بعد."
+
+#: template-parts/content/page.php:23 template-parts/content/single-mkadmi_project.php:31 template-parts/content/single-mkadmi_publication.php:38 template-parts/content/single.php:31
+msgid "Page"
+msgstr "صفحة"
+
+#: template-parts/content/page.php:29
+msgid "Edit this page"
+msgstr "تحرير هذه الصفحة"
+
+#: template-parts/content/single-mkadmi_course.php:28
+msgid "Course material"
+msgstr "مادة الدرس"
+
+#: template-parts/content/single-mkadmi_project.php:45 template-parts/content/single.php:45
+msgid "Visit the site"
+msgstr "زيارة الموقع"
+
+#: inc/assets.php:42
+msgid "Open menu"
+msgstr "فتح القائمة"
+
+#: inc/assets.php:43
+msgid "Close menu"
+msgstr "إغلاق القائمة"
+
+#: inc/assets.php:44
+msgid "Copied"
+msgstr "تم النسخ"
+
+#: inc/assets.php:45
+msgid "Copy"
+msgstr "نسخ"
+
+#: inc/customizer.php:29
+msgid "Monogram"
+msgstr "الحرفان"
+
+#: inc/customizer.php:30
+msgid "One or two letters shown in the gold frame when no logo image is set."
+msgstr "حرف أو حرفان يظهران في الإطار الذهبي عند عدم اختيار شعار."
+
+#: inc/customizer.php:36
+msgid "Name in the masthead"
+msgstr "الاسم في الترويسة"
+
+#: inc/customizer.php:37
+msgid "Leave empty to use the site title."
+msgstr "اتركه فارغًا لاستخدام عنوان الموقع."
+
+#: inc/customizer.php:46
+msgid "Portrait"
+msgstr "الصورة الشخصية"
+
+#: inc/customizer.php:52
+msgid "Titles and position"
+msgstr "الألقاب والرتبة"
+
+#: inc/customizer.php:53
+msgid "The gold line at the top of the band. Separate parts with “·”."
+msgstr "السطر الذهبي أعلى الشريط. افصل بين الأجزاء بالرمز ”·“."
+
+#: inc/customizer.php:60
+msgid "Affiliations"
+msgstr "الانتماءات"
+
+#: inc/customizer.php:61
+msgid "One per line. Each gets a location pin."
+msgstr "واحد في كل سطر، ويسبق كلًّا منها مؤشّر موقع."
+
+#: inc/customizer.php:68
+msgid "Email addresses"
+msgstr "عناوين البريد الإلكتروني"
+
+#: inc/customizer.php:69 inc/customizer.php:84
+msgid "One per line."
+msgstr "واحد في كل سطر."
+
+#: inc/customizer.php:76
+msgid "Website shown in the band"
+msgstr "الموقع المعروض في الشريط"
+
+#: inc/customizer.php:83
+msgid "Telephone numbers"
+msgstr "أرقام الهاتف"
+
+#: inc/customizer.php:91
+msgid "Curriculum vitae (PDF)"
+msgstr "السيرة الذاتية (PDF)"
+
+#: inc/customizer.php:100
+msgid "Show the date and clocks"
+msgstr "إظهار التاريخ والساعات"
+
+#: inc/customizer.php:107
+msgid "Clocks"
+msgstr "الساعات"
+
+#: inc/customizer.php:108
+msgid "One per line, as “City | Time zone”, e.g. Muscat | Asia/Muscat. Time zone names come from the IANA database."
+msgstr "واحدة في كل سطر بصيغة ”المدينة | المنطقة الزمنية“، مثل: مسقط | Asia/Muscat. أسماء المناطق الزمنية من قاعدة IANA."
+
+#: inc/customizer.php:117
+msgid "Show the figures strip"
+msgstr "إظهار شريط الأرقام"
+
+#: inc/customizer.php:124 inc/customizer.php:362
+msgid "Figures"
+msgstr "الأرقام"
+
+#: inc/customizer.php:125
+msgid "One per line, as “Figure | Label”, e.g. 93+ | scholarly publications."
+msgstr "واحد في كل سطر بصيغة ”الرقم | التسمية“، مثل: ‎+93 | منشور علمي."
+
+#: inc/customizer.php:134
+msgid "Green"
+msgstr "الأخضر"
+
+#: inc/customizer.php:141
+msgid "Gold"
+msgstr "الذهبي"
+
+#: inc/customizer.php:150
+msgid "Show “Current research topics”"
+msgstr "إظهار ”محاور البحث الحالية“"
+
+#: inc/customizer.php:156
+msgid "Research topics: heading"
+msgstr "محاور البحث: العنوان"
+
+#: inc/customizer.php:163
+msgid "Research topics"
+msgstr "محاور البحث"
+
+#: inc/customizer.php:164
+msgid "One per line, as “Emoji | Topic | optional link”."
+msgstr "واحد في كل سطر بصيغة ”رمز تعبيري | المحور | رابط اختياري“."
+
+#: inc/customizer.php:173
+msgid "Show “Academic news”"
+msgstr "إظهار ”الأخبار الأكاديمية“"
+
+#: inc/customizer.php:179
+msgid "News: heading"
+msgstr "الأخبار: العنوان"
+
+#: inc/customizer.php:186
+msgid "News: how many posts"
+msgstr "الأخبار: عدد المقالات"
+
+#: inc/customizer.php:195
+msgid "Show “Conferences organised”"
+msgstr "إظهار ”الملتقيات والمؤتمرات المنظَّمة“"
+
+#: inc/customizer.php:201
+msgid "Conferences: heading"
+msgstr "الملتقيات: العنوان"
+
+#: inc/customizer.php:208
+msgid "Conferences: how many"
+msgstr "الملتقيات: العدد"
+
+#: inc/customizer.php:217
+msgid "Show “Books and refereed work”"
+msgstr "إظهار ”المؤلّفات والكتب المحكّمة“"
+
+#: inc/customizer.php:223
+msgid "Publications: heading"
+msgstr "المنشورات: العنوان"
+
+#: inc/customizer.php:230
+msgid "Publications: how many"
+msgstr "المنشورات: العدد"
+
+#: inc/customizer.php:236
+msgid "Publications: “see all” text"
+msgstr "المنشورات: نصّ ”عرض الكل“"
+
+#: inc/customizer.php:237
+msgid "Shown under the list, e.g. See all publications (95+)."
+msgstr "يظهر أسفل القائمة، مثل: عرض جميع المنشورات (‎+95)."
+
+#: inc/customizer.php:246
+msgid "Show “Teaching”"
+msgstr "إظهار ”التدريس“"
+
+#: inc/customizer.php:252
+msgid "Teaching: heading"
+msgstr "التدريس: العنوان"
+
+#: inc/customizer.php:259
+msgid "Teaching: how many"
+msgstr "التدريس: العدد"
+
+#: inc/customizer.php:266
+msgid "Show “Research projects”"
+msgstr "إظهار ”المشاريع البحثية“"
+
+#: inc/customizer.php:272
+msgid "Projects: heading"
+msgstr "المشاريع: العنوان"
+
+#: inc/customizer.php:279
+msgid "Projects: how many"
+msgstr "المشاريع: العدد"
+
+#: inc/customizer.php:288
+msgid "Institution links"
+msgstr "روابط المؤسسات"
+
+#: inc/customizer.php:289
+msgid "One per line, as “Label | URL”."
+msgstr "واحد في كل سطر بصيغة ”التسمية | الرابط“."
+
+#: inc/customizer.php:296
+msgid "Footer line"
+msgstr "سطر التذييل"
+
+#: inc/customizer.php:297
+msgid "Replaces the default copyright line."
+msgstr "يحلّ محلّ سطر حقوق النشر الافتراضي."
+
+#: inc/customizer.php:350
+msgid "Masthead"
+msgstr "الترويسة"
+
+#: inc/customizer.php:351
+msgid "The green bar at the top: the menu, the language switcher and the name."
+msgstr "الشريط الأخضر في الأعلى: القائمة ومبدّل اللغة والاسم."
+
+#: inc/customizer.php:354
+msgid "Profile band"
+msgstr "شريط التعريف"
+
+#: inc/customizer.php:355
+msgid "The portrait, titles, affiliations and contact details under the masthead."
+msgstr "الصورة والألقاب والانتماءات وبيانات التواصل أسفل الترويسة."
+
+#: inc/customizer.php:358
+msgid "Date and clocks"
+msgstr "التاريخ والساعات"
+
+#: inc/customizer.php:359
+msgid "Local time in the cities the site spans, shown beside the profile."
+msgstr "التوقيت المحلي في المدن التي يمتدّ إليها الموقع، بجانب التعريف."
+
+#: inc/customizer.php:363
+msgid "The strip of counts under the profile band."
+msgstr "شريط الأرقام أسفل شريط التعريف."
+
+#: inc/customizer.php:366
+msgid "Colours"
+msgstr "الألوان"
+
+#: inc/customizer.php:367
+msgid "Two colours drive the whole palette."
+msgstr "لونان يقودان لوحة الألوان بأكملها."
+
+#: inc/customizer.php:370
+msgid "Homepage sections"
+msgstr "أقسام الصفحة الرئيسية"
+
+#: inc/customizer.php:371
+msgid "Shown on a static front page. Each section can be turned off, and every heading is yours to write."
+msgstr "تظهر في صفحة رئيسية ثابتة. يمكن إخفاء أي قسم، وكل عنوان تكتبه بنفسك."
+
+#: inc/customizer.php:388
+msgid "Academic site"
+msgstr "الموقع الأكاديمي"
+
+#: inc/customizer.php:389
+msgid "The profile, the homepage sections and the contact details."
+msgstr "التعريف وأقسام الصفحة الرئيسية وبيانات التواصل."
+
+#: inc/meta-boxes.php:15
+msgid "Publication details"
+msgstr "بيانات المنشور"
+
+#: inc/meta-boxes.php:16
+msgid "Course details"
+msgstr "بيانات الدرس"
+
+#: inc/meta-boxes.php:17
+msgid "Project details"
+msgstr "بيانات المشروع"
+
+#: inc/meta-boxes.php:18
+msgid "Conference details"
+msgstr "بيانات الملتقى"
+
+#: inc/meta-boxes.php:19
+msgid "Homepage news list"
+msgstr "قائمة أخبار الصفحة الرئيسية"
+
+#: inc/meta-boxes.php:143 inc/post-types.php:205
+msgid "Year"
+msgstr "السنة"
+
+#: inc/post-types.php:23 inc/post-types.php:33 inc/starter-content.php:69
+msgid "Publications"
+msgstr "المنشورات"
+
+#: inc/post-types.php:24
+msgid "Publication"
+msgstr "منشور"
+
+#: inc/post-types.php:25
+msgid "Add publication"
+msgstr "إضافة منشور"
+
+#: inc/post-types.php:26
+msgid "Edit publication"
+msgstr "تحرير المنشور"
+
+#: inc/post-types.php:27
+msgid "New publication"
+msgstr "منشور جديد"
+
+#: inc/post-types.php:28
+msgid "View publication"
+msgstr "عرض المنشور"
+
+#: inc/post-types.php:29
+msgid "Search publications"
+msgstr "البحث في المنشورات"
+
+#: inc/post-types.php:30
+msgid "No publications yet."
+msgstr "لا توجد منشورات بعد."
+
+#: inc/post-types.php:31
+msgid "No publications in the trash."
+msgstr "لا توجد منشورات في المهملات."
+
+#: inc/post-types.php:32
+msgid "All publications"
+msgstr "كل المنشورات"
+
+#: inc/post-types.php:50
+msgid "Courses"
+msgstr "الدروس"
+
+#: inc/post-types.php:51
+msgid "Course"
+msgstr "درس"
+
+#: inc/post-types.php:52
+msgid "Add course"
+msgstr "إضافة درس"
+
+#: inc/post-types.php:53
+msgid "Edit course"
+msgstr "تحرير الدرس"
+
+#: inc/post-types.php:54
+msgid "New course"
+msgstr "درس جديد"
+
+#: inc/post-types.php:55
+msgid "View course"
+msgstr "عرض الدرس"
+
+#: inc/post-types.php:56
+msgid "Search courses"
+msgstr "البحث في الدروس"
+
+#: inc/post-types.php:57
+msgid "No courses yet."
+msgstr "لا توجد دروس بعد."
+
+#: inc/post-types.php:58
+msgid "No courses in the trash."
+msgstr "لا توجد دروس في المهملات."
+
+#: inc/post-types.php:59
+msgid "All courses"
+msgstr "كل الدروس"
+
+#: inc/post-types.php:60 inc/starter-content.php:64 inc/starter-content.php:114
+msgid "Teaching"
+msgstr "التدريس"
+
+#: inc/post-types.php:77 inc/starter-content.php:115
+msgid "Research projects"
+msgstr "المشاريع البحثية"
+
+#: inc/post-types.php:78
+msgid "Research project"
+msgstr "مشروع بحثي"
+
+#: inc/post-types.php:79
+msgid "Add project"
+msgstr "إضافة مشروع"
+
+#: inc/post-types.php:80
+msgid "Edit project"
+msgstr "تحرير المشروع"
+
+#: inc/post-types.php:81
+msgid "New project"
+msgstr "مشروع جديد"
+
+#: inc/post-types.php:82
+msgid "View project"
+msgstr "عرض المشروع"
+
+#: inc/post-types.php:83
+msgid "Search projects"
+msgstr "البحث في المشاريع"
+
+#: inc/post-types.php:84
+msgid "No projects yet."
+msgstr "لا توجد مشاريع بعد."
+
+#: inc/post-types.php:85
+msgid "No projects in the trash."
+msgstr "لا توجد مشاريع في المهملات."
+
+#: inc/post-types.php:86
+msgid "All projects"
+msgstr "كل المشاريع"
+
+#: inc/post-types.php:87 inc/starter-content.php:39
+msgid "Research"
+msgstr "البحث العلمي"
+
+#: inc/post-types.php:104 inc/post-types.php:114
+msgid "Conferences"
+msgstr "الملتقيات"
+
+#: inc/post-types.php:105
+msgid "Conference"
+msgstr "ملتقى"
+
+#: inc/post-types.php:106
+msgid "Add conference"
+msgstr "إضافة ملتقى"
+
+#: inc/post-types.php:107
+msgid "Edit conference"
+msgstr "تحرير الملتقى"
+
+#: inc/post-types.php:108
+msgid "New conference"
+msgstr "ملتقى جديد"
+
+#: inc/post-types.php:109
+msgid "View conference"
+msgstr "عرض الملتقى"
+
+#: inc/post-types.php:110
+msgid "Search conferences"
+msgstr "البحث في الملتقيات"
+
+#: inc/post-types.php:111
+msgid "No conferences yet."
+msgstr "لا توجد ملتقيات بعد."
+
+#: inc/post-types.php:112
+msgid "No conferences in the trash."
+msgstr "لا توجد ملتقيات في المهملات."
+
+#: inc/post-types.php:113
+msgid "All conferences"
+msgstr "كل الملتقيات"
+
+#: inc/post-types.php:138
+msgid "Publication types"
+msgstr "أنواع المنشورات"
+
+#: inc/post-types.php:139
+msgid "Publication type"
+msgstr "نوع المنشور"
+
+#: inc/post-types.php:140
+msgid "Add publication type"
+msgstr "إضافة نوع منشور"
+
+#: inc/post-types.php:141
+msgid "All types"
+msgstr "كل الأنواع"
+
+#: inc/post-types.php:142
+msgid "Types"
+msgstr "الأنواع"
+
+#: inc/post-types.php:157 inc/post-types.php:161
+msgid "Levels"
+msgstr "المستويات"
+
+#: inc/post-types.php:158
+msgid "Level"
+msgstr "المستوى"
+
+#: inc/post-types.php:159
+msgid "Add level"
+msgstr "إضافة مستوى"
+
+#: inc/post-types.php:160
+msgid "All levels"
+msgstr "كل المستويات"
+
+#: inc/post-types.php:176 inc/post-types.php:180
+msgid "Research areas"
+msgstr "مجالات البحث"
+
+#: inc/post-types.php:177
+msgid "Research area"
+msgstr "مجال بحث"
+
+#: inc/post-types.php:178
+msgid "Add research area"
+msgstr "إضافة مجال بحث"
+
+#: inc/post-types.php:179
+msgid "All research areas"
+msgstr "كل مجالات البحث"
+
+#: inc/post-types.php:204
+msgid "Authors"
+msgstr "المؤلفون"
+
+#: inc/post-types.php:204
+msgid "As they should be cited, e.g. Mkadmi, A., Saleh, I."
+msgstr "كما يُستشهد بهم، مثل: مقدمي، ع.، صالح، ع."
+
+#: inc/post-types.php:206
+msgid "Journal, book or conference"
+msgstr "المجلة أو الكتاب أو الملتقى"
+
+#: inc/post-types.php:207
+msgid "Publisher"
+msgstr "الناشر"
+
+#: inc/post-types.php:208
+msgid "Volume, issue, pages"
+msgstr "المجلد والعدد والصفحات"
+
+#: inc/post-types.php:209 inc/template-tags.php:62
+msgid "DOI"
+msgstr "DOI"
+
+#: inc/post-types.php:209
+msgid "Bare DOI, e.g. 10.1000/182."
+msgstr "المعرّف مجرّدًا، مثل: 10.1000/182."
+
+#: inc/post-types.php:210
+msgid "ISBN / ISSN"
+msgstr "ISBN / ISSN"
+
+#: inc/post-types.php:211 inc/post-types.php:238 inc/template-tags.php:80
+msgid "Link"
+msgstr "الرابط"
+
+#: inc/post-types.php:212 inc/template-tags.php:71
+msgid "PDF"
+msgstr "PDF"
+
+#: inc/post-types.php:212
+msgid "Paste the media file URL of the full text."
+msgstr "الصق رابط ملف النصّ الكامل من الوسائط."
+
+#: inc/post-types.php:214
+msgid "Further links"
+msgstr "روابط إضافية"
+
+#: inc/post-types.php:216
+msgid "One per line, as “Label | URL” — for the publisher page, HAL, Zenodo, a second chapter PDF, and so on."
+msgstr "واحد في كل سطر بصيغة ”التسمية | الرابط“ — لصفحة الناشر أو HAL أو Zenodo أو ملف فصل ثانٍ، وهكذا."
+
+#: inc/post-types.php:220
+msgid "Course code"
+msgstr "رمز الدرس"
+
+#: inc/post-types.php:221
+msgid "Institution"
+msgstr "المؤسسة"
+
+#: inc/post-types.php:222
+msgid "Academic year"
+msgstr "السنة الجامعية"
+
+#: inc/post-types.php:222
+msgid "e.g. 2024–2025, or “since 2004”."
+msgstr "مثل: 2024–2025، أو ”منذ 2004“."
+
+#: inc/post-types.php:223
+msgid "Hours"
+msgstr "الساعات"
+
+#: inc/post-types.php:224
+msgid "Syllabus or course material"
+msgstr "المقرّر أو مادة الدرس"
+
+#: inc/post-types.php:227
+msgid "Role"
+msgstr "الدور"
+
+#: inc/post-types.php:227
+msgid "e.g. Principal investigator, Member."
+msgstr "مثل: باحث رئيسي، عضو."
+
+#: inc/post-types.php:228
+msgid "Funder or programme"
+msgstr "الجهة المموّلة أو البرنامج"
+
+#: inc/post-types.php:229
+msgid "Partners"
+msgstr "الشركاء"
+
+#: inc/post-types.php:230
+msgid "Period"
+msgstr "الفترة"
+
+#: inc/post-types.php:231
+msgid "Status"
+msgstr "الحالة"
+
+#: inc/post-types.php:231
+msgid "e.g. Ongoing, Completed."
+msgstr "مثل: جارٍ، منتهٍ."
+
+#: inc/post-types.php:232
+msgid "Project link"
+msgstr "رابط المشروع"
+
+#: inc/post-types.php:235
+msgid "Badge"
+msgstr "الشارة"
+
+#: inc/post-types.php:235
+msgid "The short label on the card, e.g. CIBAHN-20."
+msgstr "التسمية المختصرة على البطاقة، مثل: CIBAHN-20."
+
+#: inc/post-types.php:236
+msgid "Subtitle"
+msgstr "العنوان الفرعي"
+
+#: inc/post-types.php:236
+msgid "The line under the title, e.g. Digital libraries · Digital humanities."
+msgstr "السطر تحت العنوان، مثل: المكتبات الرقمية · الإنسانيات الرقمية."
+
+#: inc/post-types.php:237
+msgid "Place and proceedings"
+msgstr "المكان والوقائع"
+
+#: inc/post-types.php:237
+msgid "e.g. Paris · ACM ICPS 2018."
+msgstr "مثل: باريس · ACM ICPS 2018."
+
+#: inc/post-types.php:242
+msgid "Icon"
+msgstr "الرمز"
+
+#: inc/post-types.php:244
+msgid "A single emoji shown beside this item in the homepage news list, e.g. 📄."
+msgstr "رمز تعبيري واحد يظهر بجانب هذا العنصر في قائمة أخبار الصفحة الرئيسية، مثل: 📄."
+
+#: inc/setup.php:63 inc/starter-content.php:56
+msgid "Primary menu"
+msgstr "القائمة الرئيسية"
+
+#: inc/setup.php:64 inc/starter-content.php:75
+msgid "Language switcher"
+msgstr "مبدّل اللغة"
+
+#: inc/setup.php:65
+msgid "Footer menu"
+msgstr "قائمة التذييل"
+
+#: inc/setup.php:82
+msgid "Sidebar panels"
+msgstr "لوحات الشريط الجانبي"
+
+#: inc/setup.php:84
+msgid "The column of panels beside the content: navigation, affiliations, profiles, languages, visits, calendar."
+msgstr "عمود اللوحات بجانب المحتوى: التنقل، الانتماءات، الملفات، اللغات، الزيارات، التقويم."
+
+#: inc/setup.php:96
+msgid "Optional widgets above the footer links, side by side."
+msgstr "مربّعات جانبية اختيارية فوق روابط التذييل، جنبًا إلى جنب."
+
+#. translators: %s: post title.
+#: inc/setup.php:155
+msgid "Continue reading %s"
+msgstr "متابعة قراءة %s"
+
+#: inc/starter-content.php:29
+msgid "Who am I?"
+msgstr "من أنا؟"
+
+#: inc/starter-content.php:30
+msgid "A short biography: education, career, and the questions that drive the work."
+msgstr "سيرة موجزة: الدراسة والمسار المهني والأسئلة التي تقود العمل."
+
+#: inc/starter-content.php:34
+msgid "Curriculum vitae"
+msgstr "السيرة الذاتية"
+
+#: inc/starter-content.php:35
+msgid "Degrees, positions, supervision, editorial work and academic service."
+msgstr "الشهادات والمناصب والإشراف والعمل التحريري والخدمة الأكاديمية."
+
+#: inc/starter-content.php:40
+msgid "Current lines of enquiry, projects and collaborations."
+msgstr "محاور البحث الحالية والمشاريع والتعاونات."
+
+#: inc/starter-content.php:44
+msgid "Contact"
+msgstr "التواصل"
+
+#: inc/starter-content.php:45
+msgid "How to get in touch, and where to find me."
+msgstr "كيفية التواصل، وأين تجدني."
+
+#: inc/starter-content.php:49 inc/template-tags.php:266
+msgid "Home"
+msgstr "الرئيسية"
+
+#: inc/starter-content.php:79
+msgid "English"
+msgstr "English"
+
+#: inc/starter-content.php:96
+msgid "Abderrazak Mkadmi"
+msgstr "عبدالرزاق مقدمي"
+
+#: inc/starter-content.php:97
+msgid "Assistant Professor in Information &amp; Library Sciences"
+msgstr "أستاذ مساعد في علوم المعلومات والمكتبات"
+
+#: inc/starter-content.php:102
+msgid "PhD · Habilitation · Assistant Professor in Information Sciences"
+msgstr "دكتوراه · تأهيل جامعي · أستاذ مساعد في علوم المعلومات"
+
+#: inc/starter-content.php:103
+msgid "Department of Information Studies · Sultan Qaboos University · Muscat, Oman\nHigher Institute of Documentation (ISD) · University of Manouba · Tunisia"
+msgstr "قسم الدراسات المعلوماتية · جامعة السلطان قابوس · مسقط، سلطنة عُمان\nالمعهد العالي للتوثيق (ISD) · جامعة منوبة · تونس"
+
+#: inc/starter-content.php:105
+msgid "Paris | Europe/Paris\nTunis | Africa/Tunis\nMuscat | Asia/Muscat"
+msgstr "باريس | Europe/Paris\nتونس | Africa/Tunis\nمسقط | Asia/Muscat"
+
+#: inc/starter-content.php:107
+msgid "93+ | scholarly publications\n25+ | years in academia\n5 | doctoral students supervised\n38 | conference papers\n37 | journal articles\n6 | books published"
+msgstr "‎+93 | منشور علمي\n‎+25 | سنة خبرة أكاديمية\n5 | طلبة دكتوراه قيد الإشراف\n38 | ورقة مؤتمر\n37 | مقالة علمية\n6 | كتب منشورة"
+
+#: inc/starter-content.php:108
+msgid "Current research topics"
+msgstr "محاور البحث الحالية"
+
+#: inc/starter-content.php:109
+msgid "🤖 | Artificial intelligence and archives\n☁ | Cloud archiving\n📦 | Big data governance\n🗄 | Long-term digital preservation\n♿ | Archive access for people with disabilities\n📚 | Digital libraries\n🔒 | The right to be forgotten\n🗂 | Records and archives management"
+msgstr "🤖 | الذكاء الاصطناعي والأرشيف\n☁ | الأرشفة السحابية\n📦 | حوكمة البيانات الضخمة\n🗄 | الحفظ الرقمي طويل المدى\n♿ | إتاحة الأرشيف لذوي الإعاقة\n📚 | المكتبات الرقمية\n🔒 | الحق في النسيان\n🗂 | إدارة الوثائق والأرشيف"
+
+#: inc/starter-content.php:110
+msgid "Selected academic news"
+msgstr "أخبار أكاديمية مختارة"
+
+#: inc/starter-content.php:111
+msgid "Conferences organised"
+msgstr "الملتقيات والمؤتمرات المنظَّمة"
+
+#: inc/starter-content.php:112
+msgid "Books and refereed work"
+msgstr "المؤلّفات والكتب المحكّمة"
+
+#: inc/starter-content.php:113
+msgid "See all publications"
+msgstr "عرض جميع المنشورات"
+
+#: inc/starter-content.php:116
+msgid "Sultan Qaboos University | https://www.squ.edu.om/\nISD — Manouba | http://www.isd.rnu.tn/\nUniversity of Paris 8 | https://www.univ-paris8.fr/"
+msgstr "جامعة السلطان قابوس | https://www.squ.edu.om/\nISD — منوبة | http://www.isd.rnu.tn/\nجامعة باريس 8 | https://www.univ-paris8.fr/"
+
+#: inc/starter-content.php:123
+msgid "Navigation"
+msgstr "التنقل"
+
+#: inc/starter-content.php:128
+msgid "Academic profiles"
+msgstr "الملفات الأكاديمية"
+
+#: inc/starter-content.php:129
+msgid "ORCID | https://orcid.org/ | iD\nScopus | https://www.scopus.com/ | SC\nResearchGate | https://www.researchgate.net/ | RG\nGoogle Scholar | https://scholar.google.com/ | GS"
+msgstr "ORCID | https://orcid.org/ | iD\nScopus | https://www.scopus.com/ | SC\nResearchGate | https://www.researchgate.net/ | RG\nGoogle Scholar | https://scholar.google.com/ | GS"
+
+#: inc/starter-content.php:136
+msgid "Quick links"
+msgstr "روابط سريعة"
+
+#: inc/starter-content.php:137
+msgid "⬇ | Download the CV (PDF) | #\n📄 | Curriculum vitae (web) | #"
+msgstr "⬇ | تنزيل السيرة (PDF) | #\n📄 | السيرة الذاتية (ويب) | #"
+
+#: inc/starter-content.php:142 inc/template-tags.php:544
+msgid "Language"
+msgstr "اللغة"
+
+#: inc/starter-content.php:146
+msgid "Visits"
+msgstr "الزوار"
+
+#: inc/starter-content.php:148
+msgid "Calendar"
+msgstr "التقويم"
+
+#: inc/template-tags.php:252
+msgid "Page navigation"
+msgstr "تصفّح الصفحات"
+
+#: inc/template-tags.php:253
+msgid "Pages"
+msgstr "الصفحات"
+
+#: inc/template-tags.php:299
+msgid "Breadcrumb"
+msgstr "مسار التصفّح"
+
+#: inc/template-tags.php:419
+msgctxt "weekday format"
+msgid "l"
+msgstr ""
+
+#: inc/template-tags.php:420
+msgctxt "date format"
+msgid "j F Y"
+msgstr ""
+
+#: inc/template-tags.php:477
+msgid "Email:"
+msgstr "البريد الإلكتروني:"
+
+#: inc/template-tags.php:506
+msgid "Telephone:"
+msgstr "الهاتف:"
+
+#: inc/widgets.php:89
+msgid "Mkadmi: section navigation"
+msgstr "مقدمي: تنقّل الأقسام"
+
+#: inc/widgets.php:90
+msgid "A menu as a column of rows. An item’s description is used as its icon."
+msgstr "قائمة على شكل عمود من الصفوف. يُستخدم وصف العنصر رمزًا له."
+
+#: inc/widgets.php:114
+msgid "Sections"
+msgstr "الأقسام"
+
+#: inc/widgets.php:131 inc/widgets.php:272 inc/widgets.php:377 inc/widgets.php:470 inc/widgets.php:533 inc/widgets.php:619
+msgid "Title:"
+msgstr "العنوان:"
+
+#: inc/widgets.php:136
+msgid "Menu:"
+msgstr "القائمة:"
+
+#: inc/widgets.php:138
+msgid "— Select —"
+msgstr "— اختر —"
+
+#: inc/widgets.php:211
+msgid "Mkadmi: affiliations"
+msgstr "مقدمي: الانتماءات"
+
+#: inc/widgets.php:212
+msgid "Institutions with their emblems."
+msgstr "المؤسسات مع شعاراتها."
+
+#: inc/widgets.php:276
+msgid "Institutions:"
+msgstr "المؤسسات:"
+
+#: inc/widgets.php:277
+msgid "One per line, as “Name | Department | Emblem URL | Link”. Leave a part empty to skip it."
+msgstr "واحدة في كل سطر بصيغة ”الاسم | القسم | رابط الشعار | الرابط“. اترك أي جزء فارغًا لتخطّيه."
+
+#: inc/widgets.php:309
+msgid "Mkadmi: academic profiles"
+msgstr "مقدمي: الملفات الأكاديمية"
+
+#: inc/widgets.php:310
+msgid "ORCID, Scopus, ResearchGate, Google Scholar and other profile links."
+msgstr "روابط ORCID وScopus وResearchGate وGoogle Scholar وغيرها."
+
+#: inc/widgets.php:381
+msgid "Profiles:"
+msgstr "الملفات:"
+
+#: inc/widgets.php:382
+msgid "One per line, as “Name | URL | Short label”, e.g. ORCID | https://orcid.org/… | iD."
+msgstr "واحد في كل سطر بصيغة ”الاسم | الرابط | تسمية مختصرة“، مثل: ORCID | https://orcid.org/… | iD."
+
+#: inc/widgets.php:388
+msgid "Identifiers:"
+msgstr "المعرّفات:"
+
+#: inc/widgets.php:389
+msgid "One per line, as “Label | Value”, e.g. ORCID | 0000-0002-5621-2235."
+msgstr "واحد في كل سطر بصيغة ”التسمية | القيمة“، مثل: ORCID | 0000-0002-5621-2235."
+
+#: inc/widgets.php:421
+msgid "Mkadmi: quick links"
+msgstr "مقدمي: روابط سريعة"
+
+#: inc/widgets.php:422
+msgid "A short list of links, each with an icon."
+msgstr "قائمة قصيرة من الروابط، لكلٍّ منها رمز."
+
+#: inc/widgets.php:474
+msgid "Links:"
+msgstr "الروابط:"
+
+#: inc/widgets.php:475
+msgid "One per line, as “Icon | Label | URL”."
+msgstr "واحد في كل سطر بصيغة ”الرمز | التسمية | الرابط“."
+
+#: inc/widgets.php:506
+msgid "Mkadmi: language"
+msgstr "مقدمي: اللغة"
+
+#: inc/widgets.php:507
+msgid "The languages the site is published in, taken from the language menu."
+msgstr "اللغات التي يُنشر بها الموقع، مأخوذة من قائمة اللغة."
+
+#: inc/widgets.php:537
+msgid "The languages themselves are the items of the “Language switcher” menu, under Appearance → Menus."
+msgstr "اللغات نفسها هي عناصر قائمة ”مبدّل اللغة“ ضمن المظهر ← القوائم."
+
+#: inc/widgets.php:568
+msgid "Mkadmi: visits"
+msgstr "مقدمي: الزيارات"
+
+#: inc/widgets.php:569
+msgid "Page views in total and today. No personal data is stored."
+msgstr "عدد المشاهدات إجمالًا واليوم. لا تُخزَّن أي بيانات شخصية."
+
+#: inc/widgets.php:587
+msgid "Total visits"
+msgstr "إجمالي الزيارات"
+
+#: inc/widgets.php:592
+msgid "Today"
+msgstr "اليوم"
+
+#. translators: %s: month and year counting started, e.g. June 2026.
+#: inc/widgets.php:603
+msgid "Since %s"
+msgstr "منذ %s"
+
+#: inc/widgets.php:604
+msgctxt "counting since"
+msgid "F Y"
+msgstr ""
