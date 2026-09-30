@@ -1,0 +1,790 @@
+# Copyright (C) 2026 ILS AI-Driven
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: QR Attendance 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-30T22:55:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: qr-attendance\n"
+
+#. Plugin Name of the plugin
+#: qr-attendance.php
+msgid "QR Attendance"
+msgstr ""
+
+#. Description of the plugin
+#: qr-attendance.php
+msgid "Student attendance and absence tracking. Teachers open a session and project a rotating QR code; students scan it with their phone to check in. Absences, late arrivals and excuses are tracked per course, with reports and CSV export."
+msgstr ""
+
+#. Author of the plugin
+#: qr-attendance.php
+msgid "ILS AI-Driven"
+msgstr ""
+
+#: admin/views/course.php:16
+#: admin/views/courses.php:12
+#: includes/class-qra-admin.php:49
+msgid "Courses"
+msgstr ""
+
+#: admin/views/course.php:39
+msgid "Start a session"
+msgstr ""
+
+#: admin/views/course.php:41
+msgid "Tip: add students first, otherwise nobody can check in."
+msgstr ""
+
+#: admin/views/course.php:45
+msgid "Title (optional)"
+msgstr ""
+
+#: admin/views/course.php:46
+msgid "e.g. Lecture 5 — Recursion"
+msgstr ""
+
+#: admin/views/course.php:49
+msgid "Open for (minutes)"
+msgstr ""
+
+#: admin/views/course.php:52
+msgid "Start and show QR code"
+msgstr ""
+
+#: admin/views/course.php:54
+msgid "When the session closes, every enrolled student who did not check in is recorded as absent. Use 0 minutes to keep it open until you close it."
+msgstr ""
+
+#: admin/views/course.php:61
+msgid "Date"
+msgstr ""
+
+#: admin/views/course.php:62
+msgid "Title"
+msgstr ""
+
+#: admin/views/course.php:63
+#: admin/views/session.php:79
+#: includes/class-qra-frontend.php:203
+msgid "Status"
+msgstr ""
+
+#: admin/views/course.php:77
+msgid "Open"
+msgstr ""
+
+#: admin/views/course.php:79
+msgid "Closed"
+msgstr ""
+
+#: admin/views/course.php:86
+msgid "Show QR code"
+msgstr ""
+
+#: admin/views/course.php:86
+msgid "Details"
+msgstr ""
+
+#: admin/views/course.php:88
+msgid "Close"
+msgstr ""
+
+#: admin/views/course.php:90
+msgid "Delete this session and all its attendance records?"
+msgstr ""
+
+#: admin/views/course.php:90
+msgid "Delete"
+msgstr ""
+
+#. translators: %d: number of students.
+#: admin/views/course.php:111
+msgid "%d student"
+msgid_plural "%d students"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/course.php:118
+#: includes/class-qra-plugin.php:184
+#: includes/class-qra-reports.php:108
+msgid "Student number"
+msgstr ""
+
+#: admin/views/course.php:119
+#: includes/class-qra-reports.php:108
+msgid "Name"
+msgstr ""
+
+#: admin/views/course.php:120
+#: includes/class-qra-reports.php:108
+msgid "Email"
+msgstr ""
+
+#: admin/views/course.php:121
+msgid "Absences"
+msgstr ""
+
+#: admin/views/course.php:140
+msgid "Remove this student from the course?"
+msgstr ""
+
+#: admin/views/course.php:140
+msgid "Remove"
+msgstr ""
+
+#: admin/views/course.php:147
+msgid "No students yet. Add existing accounts or create new ones with the forms on the side."
+msgstr ""
+
+#: admin/views/course.php:153
+msgid "Add existing accounts"
+msgstr ""
+
+#: admin/views/course.php:155
+msgid "Emails, usernames or student numbers — one per line."
+msgstr ""
+
+#: admin/views/course.php:157
+msgid "Enrol"
+msgstr ""
+
+#: admin/views/course.php:163
+msgid "Create student accounts"
+msgstr ""
+
+#: admin/views/course.php:166
+msgid "One student per line: student number, full name, email. You can paste three columns straight from a spreadsheet."
+msgstr ""
+
+#: admin/views/course.php:169
+msgid "Email each new student a link to set their password"
+msgstr ""
+
+#: admin/views/course.php:170
+msgid "Existing accounts (same email or student number) are enrolled instead of duplicated."
+msgstr ""
+
+#: admin/views/course.php:171
+msgid "Create and enrol"
+msgstr ""
+
+#. translators: %d: number of absences.
+#: admin/views/course.php:191
+msgid "Highlighted rows have %d or more absences."
+msgstr ""
+
+#: admin/views/course.php:193
+msgid "An empty cell means no record: the session is still open, or the student joined the course later."
+msgstr ""
+
+#: admin/views/course.php:196
+msgid "Export CSV"
+msgstr ""
+
+#: admin/views/course.php:200
+msgid "The report fills in once the course has students and sessions."
+msgstr ""
+
+#: admin/views/course.php:206
+#: admin/views/session.php:77
+#: includes/class-qra-plugin.php:42
+msgid "Student"
+msgstr ""
+
+#: admin/views/course.php:215
+msgid "Rate"
+msgstr ""
+
+#: admin/views/course.php:256
+msgid "Save course"
+msgstr ""
+
+#: admin/views/course.php:260
+#: admin/views/course.php:262
+msgid "Delete course"
+msgstr ""
+
+#: admin/views/course.php:261
+msgid "Deletes the course with all its sessions and attendance records. Student accounts are kept."
+msgstr ""
+
+#: admin/views/course.php:262
+msgid "Delete this course and all its attendance records? This cannot be undone."
+msgstr ""
+
+#: admin/views/courses.php:19
+msgid "No courses yet. Create your first course, add its students, then start a session to show the attendance QR code."
+msgstr ""
+
+#: admin/views/courses.php:25
+msgid "Course"
+msgstr ""
+
+#: admin/views/courses.php:26
+#: includes/class-qra-admin.php:286
+#: includes/class-qra-plugin.php:41
+msgid "Teacher"
+msgstr ""
+
+#: admin/views/courses.php:27
+#: includes/class-qra-admin.php:237
+msgid "Students"
+msgstr ""
+
+#: admin/views/courses.php:28
+#: includes/class-qra-admin.php:236
+msgid "Sessions"
+msgstr ""
+
+#: admin/views/courses.php:56
+msgid "Session in progress"
+msgstr ""
+
+#: admin/views/courses.php:59
+msgid "Start session"
+msgstr ""
+
+#: admin/views/courses.php:62
+#: includes/class-qra-admin.php:238
+msgid "Report"
+msgstr ""
+
+#: admin/views/courses.php:73
+msgid "New course"
+msgstr ""
+
+#: admin/views/courses.php:76
+msgid "Create course"
+msgstr ""
+
+#: admin/views/courses.php:80
+msgid "Student pages"
+msgstr ""
+
+#: admin/views/courses.php:81
+msgid "Students can simply open the projected QR code with their phone camera. You can also add these shortcodes to pages:"
+msgstr ""
+
+#: admin/views/courses.php:83
+msgid "scan the code from inside the site"
+msgstr ""
+
+#: admin/views/courses.php:84
+msgid "the student's attendance and absences"
+msgstr ""
+
+#: admin/views/courses.php:85
+msgid "personal QR card the teacher can scan"
+msgstr ""
+
+#: admin/views/session.php:17
+#: includes/class-qra-frontend.php:203
+msgid "Session"
+msgstr ""
+
+#: admin/views/session.php:30
+msgid "Attendance QR code"
+msgstr ""
+
+#: admin/views/session.php:31
+#: includes/class-qra-admin.php:92
+msgid "This session is closed."
+msgstr ""
+
+#: admin/views/session.php:34
+msgid "Scan with your phone camera to check in"
+msgstr ""
+
+#: admin/views/session.php:37
+msgid "checked in"
+msgstr ""
+
+#: admin/views/session.php:41
+msgid "Full screen"
+msgstr ""
+
+#: admin/views/session.php:54
+#: includes/class-qra-admin.php:103
+msgid "Scan student cards"
+msgstr ""
+
+#: admin/views/session.php:55
+msgid "Close the session? Students who have not checked in will be marked absent."
+msgstr ""
+
+#: admin/views/session.php:56
+msgid "Close session"
+msgstr ""
+
+#: admin/views/session.php:60
+msgid "Reopen for"
+msgstr ""
+
+#: admin/views/session.php:60
+#: admin/views/settings.php:27
+#: admin/views/settings.php:34
+msgid "minutes"
+msgstr ""
+
+#: admin/views/session.php:61
+msgid "Reopen"
+msgstr ""
+
+#: admin/views/session.php:71
+msgid "Search students…"
+msgstr ""
+
+#: admin/views/session.php:78
+msgid "Time"
+msgstr ""
+
+#: admin/views/settings.php:12
+#: includes/class-qra-admin.php:52
+msgid "Attendance settings"
+msgstr ""
+
+#: admin/views/settings.php:15
+msgid "Checking in"
+msgstr ""
+
+#: admin/views/settings.php:18
+msgid "QR code refresh"
+msgstr ""
+
+#: admin/views/settings.php:20
+msgid "seconds"
+msgstr ""
+
+#: admin/views/settings.php:21
+msgid "The projected code changes this often, so a photo sent to an absent friend stops working almost at once. 0 keeps one code for the whole session (not recommended)."
+msgstr ""
+
+#: admin/views/settings.php:25
+msgid "Late after"
+msgstr ""
+
+#: admin/views/settings.php:28
+msgid "Check-ins this long after the session starts are recorded as late. 0 disables late marking."
+msgstr ""
+
+#: admin/views/settings.php:32
+msgid "Default session length"
+msgstr ""
+
+#: admin/views/settings.php:35
+msgid "Sessions close on their own after this time and absences are recorded."
+msgstr ""
+
+#: admin/views/settings.php:39
+msgid "Anti-cheating"
+msgstr ""
+
+#: admin/views/settings.php:41
+msgid "A phone can check in only one student per session"
+msgstr ""
+
+#: admin/views/settings.php:45
+msgid "Enrolment"
+msgstr ""
+
+#: admin/views/settings.php:47
+msgid "Enrol students automatically the first time they scan a course's code"
+msgstr ""
+
+#: admin/views/settings.php:48
+msgid "Leave unchecked to accept only students on the course list."
+msgstr ""
+
+#: admin/views/settings.php:53
+msgid "Reports"
+msgstr ""
+
+#: admin/views/settings.php:56
+msgid "Absence warning"
+msgstr ""
+
+#: admin/views/settings.php:58
+msgid "absences"
+msgstr ""
+
+#: admin/views/settings.php:59
+msgid "Students with this many unexcused absences are highlighted and warned on their attendance page. 0 disables it."
+msgstr ""
+
+#: admin/views/settings.php:63
+msgid "Student attendance page"
+msgstr ""
+
+#: admin/views/settings.php:71
+msgid "— None —"
+msgstr ""
+
+#: admin/views/settings.php:76
+msgid "The page containing [qra_my_attendance]; students are sent a link to it after checking in."
+msgstr ""
+
+#: admin/views/settings.php:81
+msgid "Data"
+msgstr ""
+
+#: admin/views/settings.php:84
+msgid "Uninstall"
+msgstr ""
+
+#: admin/views/settings.php:86
+msgid "Delete all courses and attendance records when the plugin is deleted"
+msgstr ""
+
+#: includes/class-qra-admin.php:41
+#: includes/class-qra-admin.php:42
+#: includes/class-qra-plugin.php:181
+msgid "Attendance"
+msgstr ""
+
+#: includes/class-qra-admin.php:52
+#: includes/class-qra-admin.php:67
+msgid "Settings"
+msgstr ""
+
+#: includes/class-qra-admin.php:58
+#: includes/class-qra-admin.php:61
+#: includes/class-qra-admin.php:199
+#: includes/class-qra-admin.php:208
+#: includes/class-qra-admin.php:222
+#: includes/class-qra-admin.php:233
+msgid "You are not allowed to manage this course."
+msgstr ""
+
+#: includes/class-qra-admin.php:90
+msgid "Not recorded"
+msgstr ""
+
+#: includes/class-qra-admin.php:91
+msgid "— Clear —"
+msgstr ""
+
+#. translators: %d: seconds until the QR code changes.
+#: includes/class-qra-admin.php:94
+msgid "New code in %ds"
+msgstr ""
+
+#. translators: %s: remaining time such as 12:05.
+#: includes/class-qra-admin.php:96
+msgid "Closes automatically in %s"
+msgstr ""
+
+#: includes/class-qra-admin.php:97
+msgid "Connection lost — retrying…"
+msgstr ""
+
+#: includes/class-qra-admin.php:98
+msgid "No students are enrolled in this course yet."
+msgstr ""
+
+#: includes/class-qra-admin.php:99
+msgid "QR"
+msgstr ""
+
+#: includes/class-qra-admin.php:100
+msgid "Card"
+msgstr ""
+
+#: includes/class-qra-admin.php:101
+msgid "Manual"
+msgstr ""
+
+#: includes/class-qra-admin.php:102
+msgid "Auto"
+msgstr ""
+
+#: includes/class-qra-admin.php:104
+msgid "Stop scanning"
+msgstr ""
+
+#: includes/class-qra-admin.php:105
+msgid "Could not reach the server."
+msgstr ""
+
+#: includes/class-qra-admin.php:184
+#: includes/class-qra-admin.php:554
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: includes/class-qra-admin.php:239
+msgid "Course details"
+msgstr ""
+
+#: includes/class-qra-admin.php:277
+msgid "Course name"
+msgstr ""
+
+#: includes/class-qra-admin.php:281
+msgid "Code / group"
+msgstr ""
+
+#: includes/class-qra-admin.php:282
+msgid "e.g. CS101 — Group A"
+msgstr ""
+
+#: includes/class-qra-admin.php:293
+msgid "Give a user the \"Teacher\" role to list them here. Teachers only see their own courses."
+msgstr ""
+
+#: includes/class-qra-admin.php:312
+msgid "The course name is required."
+msgstr ""
+
+#: includes/class-qra-admin.php:333
+msgid "Course updated."
+msgstr ""
+
+#: includes/class-qra-admin.php:333
+msgid "Course created. Now add its students."
+msgstr ""
+
+#. translators: %s: course name.
+#: includes/class-qra-admin.php:342
+msgid "Course \"%s\" and its attendance records were deleted."
+msgstr ""
+
+#. translators: %d: number of students.
+#: includes/class-qra-admin.php:408
+msgid "%d student enrolled."
+msgid_plural "%d students enrolled."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: list of emails, usernames or numbers.
+#: includes/class-qra-admin.php:411
+msgid "No account was found for: %s"
+msgstr ""
+
+#: includes/class-qra-admin.php:420
+msgid "You are not allowed to create user accounts."
+msgstr ""
+
+#. translators: %s: the line as typed.
+#: includes/class-qra-admin.php:445
+msgid "\"%s\": a name and a valid email are needed to create an account."
+msgstr ""
+
+#. translators: 1: accounts created, 2: existing accounts enrolled.
+#: includes/class-qra-admin.php:485
+msgid "%1$d accounts created, %2$d existing accounts enrolled."
+msgstr ""
+
+#: includes/class-qra-admin.php:500
+msgid "Student removed from the course. Their past records are kept."
+msgstr ""
+
+#: includes/class-qra-admin.php:522
+msgid "Session closed. Students who did not check in are marked absent."
+msgstr ""
+
+#: includes/class-qra-admin.php:531
+msgid "Session reopened."
+msgstr ""
+
+#: includes/class-qra-admin.php:539
+msgid "Session deleted."
+msgstr ""
+
+#: includes/class-qra-admin.php:574
+msgid "Settings saved."
+msgstr ""
+
+#: includes/class-qra-attendance.php:108
+#: includes/class-qra-frontend.php:85
+#: includes/class-qra-rest.php:103
+#: includes/class-qra-token.php:74
+#: includes/class-qra-token.php:80
+msgid "This QR code is not an attendance code."
+msgstr ""
+
+#: includes/class-qra-attendance.php:111
+#: includes/class-qra-rest.php:173
+msgid "Attendance for this session is closed."
+msgstr ""
+
+#: includes/class-qra-attendance.php:116
+msgid "You are not on the student list of this course. Please contact your teacher."
+msgstr ""
+
+#: includes/class-qra-attendance.php:132
+msgid "This device has already been used to check in another student for this session."
+msgstr ""
+
+#: includes/class-qra-attendance.php:170
+#: includes/class-qra-token.php:104
+#: includes/class-qra-token.php:107
+msgid "This QR code is not a student card."
+msgstr ""
+
+#. translators: %s: student name.
+#: includes/class-qra-attendance.php:176
+msgid "%s is not enrolled in this course."
+msgstr ""
+
+#: includes/class-qra-attendance.php:223
+#: includes/class-qra-token.php:85
+#: includes/class-qra-token.php:88
+msgid "This QR code has expired. Scan the code currently on the screen."
+msgstr ""
+
+#. translators: %s: attendance status such as "Present".
+#: includes/class-qra-attendance.php:275
+msgid "You are already checked in for this session (%s)."
+msgstr ""
+
+#: includes/class-qra-attendance.php:278
+msgid "Checked in — recorded as late."
+msgstr ""
+
+#: includes/class-qra-attendance.php:280
+msgid "Checked in — you are marked present."
+msgstr ""
+
+#: includes/class-qra-frontend.php:33
+msgid "No camera is available. Open this page on a phone, or use your phone's camera app to scan the code."
+msgstr ""
+
+#: includes/class-qra-frontend.php:34
+msgid "Camera access was refused. Allow the camera for this site in your browser settings and try again."
+msgstr ""
+
+#: includes/class-qra-frontend.php:35
+msgid "The camera only works on a secure (https) connection."
+msgstr ""
+
+#: includes/class-qra-frontend.php:36
+#: includes/class-qra-frontend.php:164
+msgid "Start camera"
+msgstr ""
+
+#: includes/class-qra-frontend.php:37
+msgid "Stop camera"
+msgstr ""
+
+#. translators: %s: login URL.
+#: includes/class-qra-frontend.php:131
+msgid "Please <a href=\"%s\">log in</a> to continue."
+msgstr ""
+
+#: includes/class-qra-frontend.php:149
+msgid "Checking in…"
+msgstr ""
+
+#: includes/class-qra-frontend.php:150
+msgid "Scan again"
+msgstr ""
+
+#: includes/class-qra-frontend.php:151
+msgid "Could not reach the server. Check your connection and try again."
+msgstr ""
+
+#: includes/class-qra-frontend.php:158
+msgid "Point your camera at the QR code shown by your teacher."
+msgstr ""
+
+#: includes/class-qra-frontend.php:183
+msgid "You are not enrolled in any course yet."
+msgstr ""
+
+#: includes/class-qra-frontend.php:192
+#: includes/class-qra-plugin.php:141
+#: includes/class-qra-reports.php:114
+msgid "Present"
+msgstr ""
+
+#: includes/class-qra-frontend.php:193
+#: includes/class-qra-plugin.php:142
+#: includes/class-qra-reports.php:115
+msgid "Late"
+msgstr ""
+
+#: includes/class-qra-frontend.php:194
+#: includes/class-qra-plugin.php:143
+#: includes/class-qra-reports.php:116
+msgid "Absent"
+msgstr ""
+
+#: includes/class-qra-frontend.php:195
+#: includes/class-qra-plugin.php:144
+#: includes/class-qra-reports.php:117
+msgid "Excused"
+msgstr ""
+
+#: includes/class-qra-frontend.php:196
+#: includes/class-qra-reports.php:118
+msgid "Attendance rate"
+msgstr ""
+
+#: includes/class-qra-frontend.php:199
+msgid "Warning: you have reached the absence limit for this course."
+msgstr ""
+
+#: includes/class-qra-frontend.php:215
+msgid "In progress"
+msgstr ""
+
+#: includes/class-qra-frontend.php:251
+msgid "Show this code to your teacher to be checked in."
+msgstr ""
+
+#. translators: one-letter abbreviation of "Present" used in the attendance grid.
+#: includes/class-qra-plugin.php:157
+msgctxt "present"
+msgid "P"
+msgstr ""
+
+#. translators: one-letter abbreviation of "Late".
+#: includes/class-qra-plugin.php:159
+msgctxt "late"
+msgid "L"
+msgstr ""
+
+#. translators: one-letter abbreviation of "Absent".
+#: includes/class-qra-plugin.php:161
+msgctxt "absent"
+msgid "A"
+msgstr ""
+
+#. translators: one-letter abbreviation of "Excused".
+#: includes/class-qra-plugin.php:163
+msgctxt "excused"
+msgid "E"
+msgstr ""
+
+#: includes/class-qra-rest.php:101
+msgid "That is a student card. Scan the code shown by your teacher."
+msgstr ""
+
+#. translators: 1: student name, 2: attendance status.
+#: includes/class-qra-rest.php:183
+msgid "%1$s is already recorded (%2$s)."
+msgstr ""
+
+#. translators: 1: student name, 2: attendance status.
+#: includes/class-qra-rest.php:185
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: includes/class-qra-rest.php:201
+msgid "This student is not enrolled in the course."
+msgstr ""
+
+#: templates/result.php:52
+msgid "View my attendance"
+msgstr ""
+
+#: templates/result.php:54
+msgid "Back to the site"
+msgstr ""
