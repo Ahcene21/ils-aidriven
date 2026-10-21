@@ -1,0 +1,407 @@
+msgid ""
+msgstr "Project-Id-Version: FihrisTech 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-10-21\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+""
+
+msgid "This page could not be found."
+msgstr "تعذّر العثور على هذه الصفحة."
+
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+msgid "Back to top"
+msgstr "العودة للأعلى"
+
+msgid "Explore all services"
+msgstr "استكشف جميع الخدمات"
+
+msgid "Explore our ecosystem"
+msgstr "استكشف منظومتنا"
+
+msgid "Featured product"
+msgstr "منتج مميّز"
+
+msgid "View product"
+msgstr "عرض المنتج"
+
+msgid "Search books, digital theses, archives…"
+msgstr "ابحث في الكتب والرسائل الرقمية والأرشيف…"
+
+msgid "Latest"
+msgstr "الأحدث"
+
+msgid "All news"
+msgstr "كل الأخبار"
+
+msgid "About"
+msgstr "عن"
+
+msgid "Thank you — we will be in touch shortly."
+msgstr "شكرًا لك — سنتواصل معك قريبًا."
+
+msgid "Please fill in your name, a valid email and a message."
+msgstr "يرجى إدخال الاسم وبريد إلكتروني صحيح ورسالتك."
+
+msgid "Sorry, we could not send your message. Please try again later."
+msgstr "عذرًا، تعذّر إرسال رسالتك. يرجى المحاولة لاحقًا."
+
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "How can we help?"
+msgstr "كيف يمكننا مساعدتك؟"
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+msgid "Primary menu"
+msgstr "القائمة الرئيسية"
+
+msgid "Footer menu"
+msgstr "قائمة التذييل"
+
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+msgid "MENU"
+msgstr "القائمة"
+
+msgid "Primary"
+msgstr "الرئيسية"
+
+msgid "Solutions"
+msgstr "الحلول"
+
+msgid "Products"
+msgstr "المنتجات"
+
+msgid "News"
+msgstr "الأخبار"
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Message from %s"
+msgstr "رسالة من %s"
+
+msgid "[%1$s] New message from %2$s"
+msgstr "[%1$s] رسالة جديدة من %2$s"
+
+msgid "FihrisTech: Hero"
+msgstr ""
+
+msgid "Badge text"
+msgstr ""
+
+msgid "Headline"
+msgstr ""
+
+msgid "Headline accent (coloured)"
+msgstr ""
+
+msgid "Intro paragraph"
+msgstr ""
+
+msgid "Primary button label"
+msgstr ""
+
+msgid "Primary button link"
+msgstr ""
+
+msgid "Secondary button label"
+msgstr ""
+
+msgid "Secondary button link"
+msgstr ""
+
+msgid "Pillars (one per line)"
+msgstr ""
+
+msgid "Steps (one per line)"
+msgstr ""
+
+msgid "FihrisTech: Stats"
+msgstr ""
+
+msgid "Strip message"
+msgstr ""
+
+msgid "Stats: one per line as value|label"
+msgstr ""
+
+msgid "FihrisTech: Sections"
+msgstr ""
+
+msgid "Solutions: eyebrow"
+msgstr ""
+
+msgid "Solutions: title"
+msgstr ""
+
+msgid "Solutions: intro"
+msgstr ""
+
+msgid "News: title"
+msgstr ""
+
+msgid "About: title"
+msgstr ""
+
+msgid "About: text"
+msgstr ""
+
+msgid "FihrisTech: Contact"
+msgstr ""
+
+msgid "Heading"
+msgstr ""
+
+msgid "Intro"
+msgstr ""
+
+msgid "Email (also receives form messages)"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Libraries · Archives · Knowledge · People"
+msgstr "مكتبات · أرشيف · معرفة · أشخاص"
+
+msgid "Knowledge Builds Brighter"
+msgstr "المعرفة تبني غدًا أكثر"
+
+msgid "Tomorrows."
+msgstr "إشراقًا."
+
+msgid "Integrated library, archiving, and knowledge technology solutions for libraries, archives, research centers, and cultural institutions through consultancy, advanced platforms, and long-term technical support."
+msgstr "حلول متكاملة للمكتبات والأرشفة وتقنيات المعرفة للمكتبات ودور الأرشيف ومراكز البحوث والمؤسسات الثقافية، عبر الاستشارات والمنصات المتقدمة والدعم الفني طويل الأمد."
+
+msgid "Explore our solutions"
+msgstr "استكشف حلولنا"
+
+msgid "Discuss your project"
+msgstr "ناقش مشروعك معنا"
+
+msgid "Libraries"
+msgstr "المكتبات"
+
+msgid "Archives"
+msgstr "الأرشيف"
+
+msgid "Research"
+msgstr "البحث"
+
+msgid "Communities"
+msgstr "المجتمعات"
+
+msgid "Plan"
+msgstr "خطّط"
+
+msgid "Implement"
+msgstr "نفّذ"
+
+msgid "Support"
+msgstr "ادعم"
+
+msgid "Grow"
+msgstr "انمُ"
+
+msgid "Experience. Expertise. Lasting Partnerships."
+msgstr "خبرة. كفاءة. شراكات تدوم."
+
+msgid "Years Experience"
+msgstr "سنوات من الخبرة"
+
+msgid "Open Platforms"
+msgstr "منصات مفتوحة"
+
+msgid "FihrisTech Products"
+msgstr "منتجات فهرستك"
+
+msgid "Institutional Relationships"
+msgstr "علاقات مؤسسية"
+
+msgid "Our Solutions"
+msgstr "حلولنا"
+
+msgid "End-to-End Solutions for the Knowledge Lifecycle"
+msgstr "حلول متكاملة لدورة حياة المعرفة"
+
+msgid "From strategic planning and collection development to digital transformation and preservation, FihrisTech brings together consultancy, technology, and ongoing support."
+msgstr "من التخطيط الاستراتيجي وتنمية المقتنيات إلى التحول الرقمي والحفظ، تجمع فهرستك بين الاستشارات والتقنية والدعم المستمر."
+
+msgid "News & Insights"
+msgstr "أخبار ورؤى"
+
+msgid "Smart Library Solutions · حلول ذكية للمكتبات"
+msgstr "حلول ذكية للمكتبات · Smart Library Solutions"
+
+msgid "FihrisTech (فهرستك) partners with institutions to turn collections into living knowledge services. Our team combines library science, archival practice, and open-source engineering to deliver solutions that last."
+msgstr "تعمل فهرستك مع المؤسسات لتحويل المقتنيات إلى خدمات معرفية حيّة. يجمع فريقنا بين علم المكتبات والممارسة الأرشيفية والهندسة مفتوحة المصدر لتقديم حلول تدوم."
+
+msgid "Let's build your knowledge future"
+msgstr "لنبنِ معًا مستقبل معرفتك"
+
+msgid "Tell us about your library, archive, or research project."
+msgstr "حدّثنا عن مكتبتك أو أرشيفك أو مشروعك البحثي."
+
+msgid "Library Solutions"
+msgstr "حلول المكتبات"
+
+msgid "Plan, develop, and operate modern libraries through consultancy, collection services, technologies, and professional support."
+msgstr "خطّط للمكتبات الحديثة وطوّرها وشغّلها عبر الاستشارات وخدمات المقتنيات والتقنيات والدعم المهني."
+
+msgid "Library strategy"
+msgstr "استراتيجية المكتبة"
+
+msgid "Operations support"
+msgstr "دعم العمليات"
+
+msgid "Integrated library systems"
+msgstr "أنظمة المكتبات المتكاملة"
+
+msgid "Archive Solutions"
+msgstr "حلول الأرشيف"
+
+msgid "Organize, digitize, and preserve institutional and national records with trusted archival platforms and practices."
+msgstr "نظّم السجلات المؤسسية والوطنية وارقمها واحفظها بمنصات وممارسات أرشيفية موثوقة."
+
+msgid "Records management"
+msgstr "إدارة السجلات"
+
+msgid "Digitization"
+msgstr "الرقمنة"
+
+msgid "Digital preservation"
+msgstr "الحفظ الرقمي"
+
+msgid "Research Services"
+msgstr "الخدمات البحثية"
+
+msgid "Open repositories and research infrastructure that make scholarly output discoverable and citable."
+msgstr "مستودعات مفتوحة وبنية تحتية بحثية تجعل الإنتاج العلمي قابلًا للاكتشاف والاستشهاد."
+
+msgid "Institutional repositories"
+msgstr "المستودعات المؤسسية"
+
+msgid "Metadata and discovery"
+msgstr "الوصف والاكتشاف"
+
+msgid "Research analytics"
+msgstr "التحليلات البحثية"
+
+msgid "Training & Communities"
+msgstr "التدريب والمجتمعات"
+
+msgid "Build capability and communities of practice around your teams, users, and partners."
+msgstr "ابنِ القدرات ومجتمعات الممارسة حول فرقك ومستخدميك وشركائك."
+
+msgid "Professional training"
+msgstr "التدريب المهني"
+
+msgid "Workshops"
+msgstr "ورش العمل"
+
+msgid "Community engagement"
+msgstr "إشراك المجتمع"
+
+msgid "FihrisTech Portal"
+msgstr "بوابة فهرستك"
+
+msgid "One Portal. Every Library Experience."
+msgstr "بوابة واحدة. كل تجارب المكتبة."
+
+msgid "A unified, intelligent discovery platform that brings your library's digital catalogs, subscribed databases, and physical resources together in one seamless interface."
+msgstr "منصة اكتشاف موحدة وذكية تجمع الفهارس الرقمية وقواعد البيانات المشترَك فيها والمصادر الفعلية لمكتبتك في واجهة واحدة سلسة."
+
+msgid "Unified discovery, federated search, and single sign-on."
+msgstr "اكتشاف موحّد وبحث موحّد وتسجيل دخول واحد."
+
+msgid "Modern, responsive, and multilingual user experience."
+msgstr "تجربة مستخدم حديثة ومتجاوبة ومتعددة اللغات."
+
+msgid "Scalable architecture with seamless integration to Koha, FOLIO, and DSpace."
+msgstr "بنية قابلة للتوسع مع تكامل سلس مع Koha وFOLIO وDSpace."
+
+msgid "Welcome to our new website"
+msgstr "مرحبًا بكم في موقعنا الجديد"
+
+msgid "We are launching a new home for our solutions, products and news."
+msgstr "نُطلق موطنًا جديدًا لحلولنا ومنتجاتنا وأخبارنا."
+
+msgid "We are launching a new home for our solutions, products and news. Check back soon for updates on projects, platforms and events."
+msgstr "نُطلق موطنًا جديدًا لحلولنا ومنتجاتنا وأخبارنا. ترقبوا قريبًا مستجدات المشاريع والمنصات والفعاليات."
+
+msgid "Open platforms for modern libraries"
+msgstr "منصات مفتوحة للمكتبات الحديثة"
+
+msgid "Why open-source library platforms give institutions control over their future."
+msgstr "لماذا تمنح منصات المكتبات مفتوحة المصدر المؤسسات السيطرة على مستقبلها."
+
+msgid "Why open-source library platforms such as Koha, FOLIO and DSpace give institutions control over their future."
+msgstr "لماذا تمنح منصات المكتبات مفتوحة المصدر مثل Koha وFOLIO وDSpace المؤسسات السيطرة على مستقبلها."
+
+msgid "Solution"
+msgstr "حل"
+
+msgid "Add new solution"
+msgstr "إضافة حل جديد"
+
+msgid "Product"
+msgstr "منتج"
+
+msgid "Add new product"
+msgstr "إضافة منتج جديد"
+
+msgid "Messages"
+msgstr "الرسائل"
+
+msgid "Card details"
+msgstr "تفاصيل البطاقة"
+
+msgid "Icon (emoji or short text)"
+msgstr "الأيقونة (رمز تعبيري أو نص قصير)"
+
+msgid "Bullet points (one per line)"
+msgstr "النقاط (نقطة في كل سطر)"
+
+msgid "The excerpt is used as the card description."
+msgstr "يُستخدم المقتطف كوصف للبطاقة."
+
+msgid "Nothing found."
+msgstr "لم يتم العثور على شيء."
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search…"
+msgstr "بحث…"
+
+msgid "What is included"
+msgstr "ما يتضمنه"
+
+msgid "Related"
+msgstr "ذات صلة"
+
+msgid "Learn more"
+msgstr "اعرف المزيد"
+

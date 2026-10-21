@@ -106,6 +106,21 @@ if ( $query->have_posts() ) {
 	</div>
 </section>
 
+<?php
+$news = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'ignore_sticky_posts' => true, 'no_found_rows' => true ) );
+if ( $news->have_posts() ) : ?>
+<section class="section alt" id="news">
+	<div class="container">
+		<div class="eyebrow"><?php esc_html_e( 'Latest', 'fihristech' ); ?></div>
+		<h2><?php echo esc_html( fh_opt( 'news_title' ) ); ?></h2>
+		<a class="link" href="<?php echo esc_url( fh_news_url() ); ?>"><?php esc_html_e( 'All news', 'fihristech' ); ?> →</a>
+		<div class="cards cards-3">
+			<?php while ( $news->have_posts() ) { $news->the_post(); fh_post_card(); } wp_reset_postdata(); ?>
+		</div>
+	</div>
+</section>
+<?php endif; ?>
+
 <section class="section" id="about">
 	<div class="container narrow">
 		<div class="eyebrow"><?php esc_html_e( 'About', 'fihristech' ); ?> <?php bloginfo( 'name' ); ?></div>

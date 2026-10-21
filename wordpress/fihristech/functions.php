@@ -21,6 +21,7 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	add_theme_support( 'custom-logo', array( 'height' => 120, 'width' => 400, 'flex-width' => true, 'flex-height' => true ) );
 	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'starter-content', fh_starter_content() );
 	add_theme_support( 'automatic-feed-links' );
 	register_nav_menus( array( 'primary' => __( 'Primary menu', 'fihristech' ), 'footer' => __( 'Footer menu', 'fihristech' ) ) );
 } );
@@ -70,4 +71,21 @@ function fh_logo() {
 /** Anchor targets on the front page, real URLs elsewhere. */
 function fh_anchor( $id ) {
 	return is_front_page() ? '#' . $id : home_url( '/#' . $id );
+}
+
+/** Render a blog post as a card. */
+function fh_post_card() {
+	get_template_part( 'template-parts/card', null, array(
+		'title' => get_the_title(),
+		'text'  => get_the_excerpt(),
+		'url'   => get_permalink(),
+		'date'  => get_the_date(),
+		'image' => has_post_thumbnail() ? get_the_post_thumbnail( null, 'medium_large', array( 'loading' => 'lazy' ) ) : '',
+	) );
+}
+
+/** Posts page URL (falls back to the home URL). */
+function fh_news_url() {
+	$id = (int) get_option( 'page_for_posts' );
+	return $id ? get_permalink( $id ) : home_url( '/?post_type=post' );
 }

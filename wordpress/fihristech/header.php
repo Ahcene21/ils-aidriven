@@ -16,9 +16,10 @@
 		if ( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'depth' => 1 ) );
 		} else {
-			printf( '<a href="%s">%s</a><a href="%s">%s</a><a href="%s">%s</a><a href="%s">%s</a>',
+			printf( '<a href="%s">%s</a><a href="%s">%s</a><a href="%s">%s</a><a href="%s">%s</a><a href="%s">%s</a>',
 				esc_url( fh_anchor( 'solutions' ) ), esc_html__( 'Solutions', 'fihristech' ),
 				esc_url( fh_anchor( 'products' ) ), esc_html__( 'Products', 'fihristech' ),
+				esc_url( fh_anchor( 'news' ) ), esc_html__( 'News', 'fihristech' ),
 				esc_url( fh_anchor( 'about' ) ), esc_html__( 'About', 'fihristech' ),
 				esc_url( fh_anchor( 'contact' ) ), esc_html__( 'Contact', 'fihristech' )
 			);

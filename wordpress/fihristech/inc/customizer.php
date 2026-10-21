@@ -27,6 +27,7 @@ add_action( 'customize_register', function ( $wp ) {
 			'sol_eyebrow'   => array( __( 'Solutions: eyebrow', 'fihristech' ), 'text' ),
 			'sol_title'     => array( __( 'Solutions: title', 'fihristech' ), 'text' ),
 			'sol_lead'      => array( __( 'Solutions: intro', 'fihristech' ), 'textarea' ),
+			'news_title'    => array( __( 'News: title', 'fihristech' ), 'text' ),
 			'about_title'   => array( __( 'About: title', 'fihristech' ), 'text' ),
 			'about_text'    => array( __( 'About: text', 'fihristech' ), 'textarea' ),
 		) ),

@@ -128,3 +128,16 @@ h2{font-size:clamp(30px,4.5vw,52px);line-height:1.15;color:var(--navy);margin:0 
 @media(min-width:900px){.page-grid{grid-template-columns:repeat(2,1fr)}.nav ul{display:flex;gap:32px}}
 .custom-logo-link{display:flex;align-items:center}.custom-logo{max-height:64px;width:auto}
 @media(min-width:900px){.logo img,.custom-logo{max-height:76px}}
+
+.meta{display:block;font:700 13px Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--purple);margin-bottom:10px}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:18px;margin-bottom:18px;display:block}
+.cards-3{display:grid;gap:24px}
+.hero-small{padding:48px 0 56px}.hero-small h1{font-size:clamp(32px,5vw,56px);margin:16px 0}
+.entry h2{margin-top:40px}
+.post-nav{display:flex;justify-content:space-between;gap:16px;margin-top:48px;font-weight:700}
+.post-nav a{color:var(--navy);text-decoration:none}
+.searchform input{width:100%;max-width:420px;font:inherit;padding:14px 20px;border:1.5px solid #b5d3d6;border-radius:999px}
+.pagination .nav-links{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap}
+.pagination .page-numbers{padding:10px 16px;border-radius:999px;background:#fff;border:1px solid #e1ecee;text-decoration:none;color:var(--navy)}
+.pagination .current{background:var(--navy);color:#fff}
+@media(min-width:900px){.cards-3{grid-template-columns:repeat(3,1fr)}.page-grid.cards-3{grid-template-columns:repeat(3,1fr)}}
