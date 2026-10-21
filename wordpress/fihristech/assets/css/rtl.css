@@ -1,0 +1,13 @@
+/* Arabic / RTL overrides */
+body{font-family:Tajawal,Lato,system-ui,sans-serif;letter-spacing:0}
+h1,h2,h3,.btn,.pill,.eyebrow,.stat b,.steps span,.nav a{font-family:Tajawal,Montserrat,sans-serif;letter-spacing:0}
+h1{letter-spacing:0}
+.eyebrow,.pill,.btn,.stat span,.badge,.nav a,.link,.card a.more{letter-spacing:0}
+.card li,.dots li{padding-left:0;padding-right:32px}
+.card li::before,.dots li::before{left:auto;right:0}
+.watermark{right:auto;left:-40px}
+.to-top{right:auto;left:0}
+.form{text-align:right}
+.bar span{margin-left:0;margin-right:auto}
+.pillars li{border-left:0;border-right:3px solid var(--violet)}
+.btn span[aria-hidden]{display:inline-block;transform:scaleX(-1)}
